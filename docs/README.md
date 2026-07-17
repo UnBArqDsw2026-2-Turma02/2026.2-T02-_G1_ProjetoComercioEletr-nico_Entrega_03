@@ -7,7 +7,7 @@ Demais diretrizes constam no Moodle.
 
 **!! *Não coloque os nomes dos alunos no título do repositório*. !!**
 
-**!! *Exemplo de título correto: 2026.2(T01)_G1_ProjetoComercioEletronico_Entrega_03*. !!** 
+**!! *Exemplo de título correto: 2026.2(T02)_G1_ProjetoComercioEletronico_Entrega_03*. !!** 
  
  (Apague esses comentários)
 
