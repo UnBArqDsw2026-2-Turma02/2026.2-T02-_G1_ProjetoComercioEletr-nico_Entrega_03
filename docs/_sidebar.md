@@ -8,16 +8,17 @@
 
   - Relatórios
 
-      - **SubEquipe 01**
-        - [1. Apresentação da equipe](/Base/Relatorios/subequipe01/subequipe01.md)
-        - [2. GoF Criacionais](/Base/Relatorios/subequipe01/gof_criacionais.md)
-        - [3. Modelagem](/Base/Relatorios/subequipe01/modelagem.md)
-        - [4. Implementação](/Base/Relatorios/subequipe01/implementacao.md)
-        - [5. Execução](/Base/Relatorios/subequipe01/execucao.md)
-        - [6. IA Generativa](/Base/Relatorios/subequipe01/ia_generativa.md)
+      - [Sub-Equipe 01](/Base/Relatorios/subequipe01/subequipe01.md)
+        - [Apresentação da equipe](/Base/Relatorios/subequipe01/subequipe01.md)
+        - [GoF Criacionais](/Base/Relatorios/subequipe01/gof_criacionais.md)
+        - [Modelagem](/Base/Relatorios/subequipe01/modelagem.md)
+        - [Implementação](/Base/Relatorios/subequipe01/implementacao.md)
+        - [Execução](/Base/Relatorios/subequipe01/execucao.md)
+        - [IA Generativa](/Base/Relatorios/subequipe01/ia_generativa.md)
 
 
       - [Sub-Equipe 02](/Base/Relatorios/1.1.2.SubEquipe_02.md)
+      
       - [Sub-Equipe 03](/Base/Relatorios/1.1.3.subequipe-03/1.1.3.SubEquipe_03.md)
         - [Módulo - Padrões de Projeto](/Base/Relatorios/1.1.3.subequipe-03/padroesprojetoEquipe03.md)
         - [Gestão e Desenvolvimento Colaborativo](/Base/Relatorios/1.1.3.subequipe-03/gestaoEquipe03.md)
