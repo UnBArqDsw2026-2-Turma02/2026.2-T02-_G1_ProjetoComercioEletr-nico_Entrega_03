@@ -119,3 +119,4 @@ Com o objetivo de alcançar alta coesão e baixo acoplamento — permitindo que 
 > | Versão | Data | Descrição | Autores | Revisor |
 > | :---: | :---: | :--- | :--- | :---: |
 > | `0.1` | 14/10/2026 | Criação e Estruturação da página | [Rafaela Andrea](https://github.com/radamesGuerra) | - |
+> | `0.2` | 15/10/2026 | Elaboração de parte do texto | [Leticia Santos](https://github.com/LeticiaSantosss) | - |
