@@ -17,6 +17,13 @@
         - [IA Generativa](/Base/Relatorios/subequipe01/ia_generativa.md)
 
       - [Sub-Equipe 02](/Base/Relatorios/1.1.2.SubEquipe_02.md)
+        - [Apresentação da equipe](/Base/Relatorios/subequipe02/subequipe02.md)
+        - [GoF Estrutural](/Base/Relatorios/subequipe02/gof_estrutural.md)
+        - [Modelagem UML](/Base/Relatorios/subequipe02/modelagem.md)
+        - [Implementação](/Base/Relatorios/subequipe02/implementacao.md)
+        - [Execução e Vídeo](/Base/Relatorios/subequipe02/execucao.md)
+        - [IA Generativa e Lições Aprendidas](/Base/Relatorios/subequipe02/ia_generativa.md)
+        - [Gestão e Participações](/Base/Relatorios/subequipe02/gestao.md)
         
       - [Sub-Equipe 03](/Base/Relatorios/1.1.3.subequipe-03/1.1.3.SubEquipe_03.md)
         - [Módulo - Padrões de Projeto](/Base/Relatorios/1.1.3.subequipe-03/padroesprojetoEquipe03.md)
