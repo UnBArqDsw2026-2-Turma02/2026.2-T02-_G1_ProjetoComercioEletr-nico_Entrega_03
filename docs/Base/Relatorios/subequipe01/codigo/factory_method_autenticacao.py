@@ -9,11 +9,14 @@ Estrutura do padrão:
   Creator           -> ServicoLogin (declara o factory method criar_autenticador())
   ConcreteCreator   -> LoginLocal, LoginGoogle, LoginFacebook, LoginApple, LoginCodigoEmail
 
-Regras de segurança baseadas na análise da Decathlon 
+Regras de segurança baseadas na análise da Decathlon (ver documentação):
   - Mensagem de erro genérica (evita enumeração de usuários)
   - Bloqueio temporário após 5 tentativas erradas (a Decathlon não bloqueou)
   - Senha armazenada com hash + salt (nunca em texto puro)
   - Código de uso único por e-mail, válido por 15 minutos e usado só uma vez
+
+Integração com o Singleton: ao autenticar, a sessão é registrada no
+GerenciadorSessao (ver singleton_sessao.py).
 """
 from __future__ import annotations
 
@@ -23,6 +26,8 @@ import secrets
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+
+from singleton_sessao import GerenciadorSessao
 
 MENSAGEM_GENERICA = "E-mail ou senha inválidos."
 MAX_TENTATIVAS = 5
@@ -64,6 +69,7 @@ class ResultadoAutenticacao:
     sucesso: bool
     mensagem: str
     email: str | None = None
+    token_sessao: str | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -173,11 +179,14 @@ class ServicoLogin(ABC):
         autenticador = self.criar_autenticador()
         resultado = autenticador.autenticar(credenciais)
         if resultado.sucesso:
-            self._iniciar_sessao(resultado.email)
+            resultado.token_sessao = self._iniciar_sessao(resultado.email)
         return resultado
 
-    def _iniciar_sessao(self, email: str) -> None:
-        print(f"  [sessão] Sessão iniciada para {email}")
+    def _iniciar_sessao(self, email: str) -> str:
+        # Singleton: todos os tipos de login registram a sessão no mesmo gerenciador
+        token = GerenciadorSessao().criar_sessao(email)
+        print(f"  [sessão] Sessão iniciada para {email} (token {token[:8]}...)")
+        return token
 
 
 # ---------------------------------------------------------------------------
@@ -255,3 +264,6 @@ if __name__ == "__main__":
     print(f"  (simulação) código recebido no e-mail: {codigo}")
     tentar("Código correto", servico_codigo, {"email": "rafaela@hotmail.com", "codigo": codigo})
     tentar("Reusar o mesmo código", servico_codigo, {"email": "rafaela@hotmail.com", "codigo": codigo})
+
+    print("\n=== 5. Sessões registradas no Singleton ===")
+    print(f"  Dispositivos de rafaela@hotmail.com: {GerenciadorSessao().dispositivos_conectados('rafaela@hotmail.com')}")
