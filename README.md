@@ -1,7 +1,6 @@
 ## Sobre o Projeto
 
-Este repositório contém a documentação e os artefatos desenvolvidos pelo **Grupo 01** para o projeto de **Comércio Eletrônico**, com foco na análise, modelagem e documentação arquitetural do domínio de autenticação e gerenciamento de conta da plataforma estudada.
-
+Este repositório contém a documentação e os artefatos desenvolvidos pelo **Grupo 01** para o projeto de **Comércio Eletrônico**.
 ---
 
 ##  Membros da Equipe
@@ -24,6 +23,6 @@ Este repositório contém a documentação e os artefatos desenvolvidos pelo **G
 
 A documentação oficial do projeto está publicada por meio do **Docsify**:
 
-**[Acessar Documentação do Projeto](https://unbarqdsw2026-2-turma02.github.io/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega03/#/)**
+**[Acessar Documentação do Projeto](https://unbarqdsw2026-2-turma02.github.io/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/)**
 
 ---
