@@ -1,31 +1,28 @@
-# RepositorioTemplate
+## Sobre o Projeto
 
-Repositório que deve ser utilizado como template inicial pelos grupos da matéria de Arquitetura e Desenho de Software.
+Este repositório contém a documentação e os artefatos desenvolvidos pelo **Grupo 01** para o projeto de **Comércio Eletrônico**.
+---
 
-## Introdução
+##  Membros da Equipe
 
-Este repositório traz um template de repo de documentação a ser seguido pelos grupos de arquitetura e desenho de software.
+|                                            Foto                                           | Nome                 |                         GitHub                         |
+| :---------------------------------------------------------------------------------------: | :------------------- | :----------------------------------------------------: |
+|    <img src="https://github.com/Camile0318.png" width="80" style="border-radius: 50%;">   | **Camile Barbosa**   |      [@Camile0318](https://github.com/Camile0318)      |
+| <img src="https://github.com/dylancavalcante.png" width="80" style="border-radius: 50%;"> | **Dylan Portela**    | [@dylancavalcante](https://github.com/dylancavalcante) |
+|      <img src="https://github.com/diaxiz.png" width="80" style="border-radius: 50%;">     | **Diassis Bezerra**  |          [@diaxiz](https://github.com/diaxiz)          |
+| <img src="https://github.com/LeticiaSantosss.png" width="80" style="border-radius: 50%;"> | **Letícia Carvalho** | [@LeticiaSantosss](https://github.com/LeticiaSantosss) |
+| <img src="https://github.com/marianagonzaga0.png" width="80" style="border-radius: 50%;"> | **Mariana Ribeiro**  | [@marianagonzaga0](https://github.com/marianagonzaga0) |
+|   <img src="https://github.com/NayraNery127.png" width="80" style="border-radius: 50%;">  | **Nayra Silva**      |    [@NayraNery127](https://github.com/NayraNery127)    |
+|  <img src="https://github.com/radamesGuerra.png" width="80" style="border-radius: 50%;">  | **Rafaela Andrea**   |   [@radamesGuerra](https://github.com/radamesGuerra)   |
+|   <img src="https://github.com/TerminaKng05.png" width="80" style="border-radius: 50%;">  | **Samuel Felipe**    |    [@TerminaKng05](https://github.com/TerminaKng05)    |
+|    <img src="https://github.com/uires2023.png" width="80" style="border-radius: 50%;">    | **Uires Carvalho**   |       [@uires2023](https://github.com/uires2023)       |
 
-## Tecnologia
+---
 
-A geração do site estático é realizada utilizando o [docsify](https://docsify.js.org/).
+## Documentação no GitHub Pages
 
-```shell
-"Docsify generates your documentation website on the fly. Unlike GitBook, it does not generate static html files. Instead, it smartly loads and parses your Markdown files and displays them as a website. To start using it, all you need to do is create an index.html and deploy it on GitHub Pages."
-```
+A documentação oficial do projeto está publicada por meio do **Docsify**:
 
-### Instalando o docsify
+**[Acessar Documentação do Projeto](https://unbarqdsw2026-2-turma02.github.io/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/)**
 
-Execute o comando:
-
-```shell
-npm i docsify-cli -g
-```
-
-### Executando localmente
-
-Para iniciar o site localmente, utilize o comando:
-
-```shell
-docsify serve ./docs
-```
+---
