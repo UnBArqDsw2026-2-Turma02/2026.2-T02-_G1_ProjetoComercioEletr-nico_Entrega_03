@@ -10,12 +10,17 @@ O modelo completo do sistema engloba três camadas principais de responsabilidad
 * **Camada de Negócio e Serviços Core (Plataforma VTEX):** Conjunto de microsserviços do e-commerce responsáveis pela lógica de negócio e persistência das etapas da compra (serviços de catálogo, disponibilidade de estoque, carrinho, pedido, logística, entre outros).
 * **Camada de Serviços Transversais e Integrações Terceiras:** Serviços que atuam de forma paralela ao fluxo principal para enriquecer a experiência, garantir a segurança financeira e coletar dados operacionais (motor de recomendações, IA, camadas de segurança, antifraude, risco, monitoramento).
 
-*(modelagem proposta pela IA)*  
-O diagrama acima reflete todas as classes e dependências encontradas durante a engenharia reversa. 
+![Diagrama de Classes do Fluxo C](../../../assets/images/ModeloPropostoporIA.png)
+<div align="center">
+  <sub><b>Figura 1:</b> Diagrama de Classes do Fluxo C. Fonte: Confeccionado por IA.</sub>
+</div>
+<br>
 
-* **Classes de Domínio (`Carrinho`, `ItemCarrinho`, `Cliente`, `Pedido`):** Tratam as regras puras da compra. 
-* **Classes de Serviços Core (`LogisticsService`, `PaymentGatewayAPI`, `ViaCEPService`):** Fazem a ponte com as APIs de infraestrutura e e-commerce. 
-* **Classes Transversais (`DynamicYieldAdapter`, `KondutoAntiFraude`, `GA4Tracker`, `SentryLogger`):** Representam os conectores com serviços terceiros de Inteligência Artificial, segurança comportamental e telemetria. 
+O diagrama acima tem como objetivo ilustrar visualmente a modelagem do sistema, servindo de apoio para reduzir a abstração da arquitetura mapeada. Ele sintetiza as principais classes e interações estruturais do escopo:
+
+- **Serviço Principal / Controlador (`VTEXCheckoutService`):** Atua no topo do fluxo gerenciando as ações globais e orquestrando as chamadas de serviços e atualização de estado.
+- **Classes de Domínio e Estado (`OrderForm` e agregados):** Centraliza os dados da sessão/pedido, agregando estruturas como `ItemCarrinho`, `EnderecoEntrega`, `CupomDesconto`, `ShippingData`, `ClienteProfile` e `PaymentData`.
+- **Classes de Serviços e Integrações (`ViaCEPService`, `DynamicYieldService`, `GoogleRecaptchaEnterprise`, `AntifraudeKondutoService`):** Fazem a ponte com APIs de consulta de endereço (CEP), personalização/IA, segurança (reCAPTCHA) e análise antifraude.
 
 ---
 
@@ -39,7 +44,26 @@ Para a construção do modelo simplificado, os seguintes componentes mapeados no
 ## Modelagem do Sistema
 O diagrama a seguir ilustra o escopo modelado do sistema, estruturado especificamente para a aplicação e validação dos padrões comportamentais propostos. 
 
-![Imagem do diagrama de classes](../../../assets/images/DiagramaClassesFluxoC.png)
+![Diagrama de Classes do Fluxo C](../../../assets/images/DiagramaClassesFluxoC.png)
+<div align="center">
+  <sub><b>Figura 2:</b> Modelo 1 - Diagrama de Classes do Fluxo C sem padrão de projeto. Fonte: Confeccionado por Letícia e Rafaela.</sub>
+</div>
+<br>
+
+</details>
+<br>
+<details>
+<summary><b> Histórico de Versionamento e Evolução do Diagrama (Clique para expandir)</b></summary>
+<br>
+
+| Versão | Data | Modificações Realizadas |
+| :--- | :--- | :--- |
+| **v0.1** | 12/10/2026 | Modelagem inicial diagramada por Letícia |
+| **v0.2** | 13/10/2026 | Correções do modelo proposto: relacionamentos e atributos; Melhora do layout, por Rafaela |
+| **v1.0** | 14/10/2026 | Correção do relacionamento Pedido - Carrinho, por Letícia |
+
+> **Nota de Versionamento:** O diagrama completo e interativo pode ser acessado online [aqui](https://drive.google.com/file/d/1xnPNZh4ZvVBz5o62hEkzHH94r93ELc3M/view?usp=sharing).
+</details>
 
 #### Dicionário de Classes
 | Classe | Papel Principal no Domínio |
@@ -95,16 +119,60 @@ Com o objetivo de alcançar alta coesão e baixo acoplamento — permitindo que 
 * **Contexto (`Pedido`):** Mantém uma referência polimórfica para a estratégia ativa escolhida pelo cliente durante o *checkout*, delegando a execução da transação para o objeto concreto correspondente sem que a classe conheça os detalhes internos de cada meio de pagamento.
 
 ![Imagem do diagrama com padrão Gof Comportamental Strategy:](../../../assets/images/GofStrategyFluxoC.png)
+<div align="center">
+  <sub><b>Figura 3:</b> Modelo 2 - Diagrama de Classes do Fluxo C com padrão de projeto. Fonte: Confeccionado por Letícia e Rafaela.</sub>
+</div>
+<br>
+
+</details>
+<br>
+<details>
+<summary><b> Histórico de Versionamento e Evolução do Diagrama (Clique para expandir)</b></summary>
+<br>
+
+| Versão | Data | Modificações Realizadas |
+| :--- | :--- | :--- |
+| **v0.1** | 12/10/2026 | Modelagem inicial com aplicação do Padrão GoF *Strategy* |
+| **v1.0** | 14/10/2026 | Altera o modelo inicial usando o Modelo 1. Confeccionado por Letícia, revisado e aprovado por Rafaela |
+
+> **Nota de Versionamento:** O diagrama completo e interativo pode ser acessado online [aqui](https://drive.google.com/file/d/1PAof5HkGvJISSdFrAPxbfek8Zh8LF6Cr/view?usp=sharing).
+</details>
 
 ### Detalhamento das Modificações do Padrão Strategy
 
 #### 1. Modificações em Classes
 
+* **Introdução da Interface `<<Interface>> FormaPagamento`:** Foi criada uma nova abstração para servir de contrato central do padrão *Strategy*, definindo o comportamento comum que todas as modalidades de pagamento devem seguir.
+* **Criação de Classes Concretas de Pagamento:** A antiga classe genérica Pagamento foi desmembrada em três classes especializadas que herdam/implementam a interface FormaPagamento:
+  * **PagamentoPix**
+  * **PagamentoCartaoCredito**
+  * **PagamentoBoleto**
+* **Remoção da classe genérica antiga:** A classe isolada de pagamento monolítica foi substituída pelas estratégias concretas, eliminando a necessidade de estruturas condicionais (`if/else`) no código.
+
 #### 2. Modificações em Atributos
+
+* **Na classe Pedido:**
+  * Foi adicionado o atributo **- formaPagamento: FormaPagamento**. É por meio dele que o pedido passa a referenciar de forma polimórfica a estratégia de pagamento escolhida pelo cliente em tempo de execução.
+* **Nas Classes Concretas (PagamentoPix, PagamentoCartaoCredito, PagamentoBoleto):**
+  * Cada classe agora possui exclusivamente os atributos específicos do seu domínio financeiro:
+    * **PagamentoPix:** `- validePix: DateTime`, `- chavePix: String`.
+    * **PagamentoCartaoCredito:** `- numeroCartao: String`, `- titularCartao: String`, `- validadeCartao: String`, `- cvvCartao: Integer`, `- cpfTitular: String`, `- qtdParcelas: Integer`.
+    * **PagamentoBoleto:** `- codigoBarras: String`, `- linhaDigitavel: String`, `- dataVencimento: DateTime`, `- nomeBeneficiario: String`.
 
 #### 3. Modificações em Métodos
 
+* **Na interface FormaPagamento:**
+  * Declaração do método padrão da estratégia: `+processarPagamento(valor: BigDecimal): boolean`.
+* **Na classe Pedido:**
+  * Adição do método de associação/inversão de controle: `+setFormaPagamento(forma: FormaPagamento): void`, permitindo injetar a estratégia escolhida no pedido.
+* **Nas Classes Concretas:**
+  * **PagamentoPix** e **PagamentoCartaoCredito** implementam o método `+processarPagamento(valor: BigDecimal): boolean`.
+  * **PagamentoBoleto** implementa operações adicionais pertinentes ao seu ciclo específico: `+processarPagamento(valor: BigDecimal): Boolean`, `+gerarBoleto(valor: BigDecimal): String` e `+estaVencido(): Boolean`.
+
 #### 4. Modificações em Ligações e Relacionamentos
+
+* **Associação Pedido ──── FormaPagamento:** O Pedido agora se conecta diretamente à interface FormaPagamento (com multiplicidade 1 para 1), permitindo que a transação ocorra de maneira genérica sem acoplamento rígido.
+* **Relações de Realização/Implementação (Setas tracejadas com ponta vazia):** As classes **PagamentoPix**, **PagamentoCartaoCredito** e **PagamentoBoleto** apontam para a interface FormaPagamento, indicando que cumprem aquele contrato arquitetural.
 
 ---
 
@@ -116,7 +184,8 @@ Com o objetivo de alcançar alta coesão e baixo acoplamento — permitindo que 
 
 > **Histórico de Versões**
 > 
-> | Versão | Data | Descrição | Autores | Revisor |
-> | :---: | :---: | :--- | :--- | :---: |
-> | `0.1` | 14/10/2026 | Criação e Estruturação da página | [Rafaela Andrea](https://github.com/radamesGuerra) | - |
-> | `0.2` | 15/10/2026 | Elaboração de parte do texto | [Leticia Santos](https://github.com/LeticiaSantosss) | - |
+> | Versão | Data | Descrição | Autores |
+> | :---: | :---: | :--- | :--- |
+> | `0.1` | 14/10/2026 | Criação e Estruturação da página | [Rafaela Andrea](https://github.com/radamesGuerra) |
+> | `0.2` | 15/10/2026 | Acrescenta o texto referente à modelagem inicial e parte da aplicação do Padrão *Strategy* | [Leticia Santos](https://github.com/LeticiaSantosss) |
+> | `0.3` | 16/10/2026 | Acrescenta o texto referente à aplicação do Padrão *Strategy* e adiciona os versionamentos e links de referencias aos diagramas elaboraborados pelas autoras | [Rafaela Andrea](https://github.com/radamesGuerra) |
