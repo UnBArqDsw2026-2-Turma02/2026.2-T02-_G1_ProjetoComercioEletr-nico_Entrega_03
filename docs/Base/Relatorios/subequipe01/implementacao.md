@@ -1,10 +1,23 @@
-# Implementação: Factory Method
+# Implementação: Factory Method e Singleton
 
 ## Visão geral
 
-O Factory Method foi aplicado ao fluxo de autenticação do e-commerce. O usuário pode entrar com e-mail e senha, Google, Facebook, Apple ou com um código de uso único enviado por e-mail. Cada forma de login tem sua própria validação, mas o fluxo de autenticar e iniciar a sessão é o mesmo para todas.
+A subequipe 01 aplicou dois padrões GoF criacionais ao Fluxo A (gestão de usuário, autenticação e perfil):
 
-## Papéis do padrão no código
+| Padrão | Onde foi aplicado | Arquivo |
+|---|---|---|
+| Factory Method | Criação do autenticador para cada forma de login | `factory_method_autenticacao.py` |
+| Singleton | Gerenciador único das sessões ativas | `singleton_sessao.py` |
+
+Os dois trabalham juntos: o Factory Method autentica o usuário e, quando o login é aprovado, a sessão é registrada no Singleton.
+
+## Factory Method: autenticação
+
+### Problema
+
+O usuário pode entrar com e-mail e senha, Google, Facebook, Apple ou um código de uso único enviado por e-mail. Cada forma de login tem sua própria validação, mas o fluxo de autenticar e iniciar a sessão é igual para todas. Sem o padrão, esse fluxo precisaria de uma cadeia de `if/elif` que teria que ser editada a cada novo tipo de login.
+
+### Papéis do padrão no código
 
 | Papel no padrão | Classe no projeto | Responsabilidade |
 |---|---|---|
@@ -15,7 +28,7 @@ O Factory Method foi aplicado ao fluxo de autenticação do e-commerce. O usuár
 
 O método `realizar_login()` não sabe qual autenticador concreto está usando. Para adicionar uma nova forma de login, basta criar um novo par ConcreteCreator e ConcreteProduct, sem alterar as classes existentes (princípio aberto/fechado).
 
-## Decisões de segurança
+### Decisões de segurança
 
 As regras abaixo vieram da análise do fluxo de login da Decathlon, usada como referência pelo grupo:
 
@@ -28,14 +41,51 @@ As regras abaixo vieram da análise do fluxo de login da Decathlon, usada como r
 
 Além disso, as senhas são armazenadas com hash PBKDF2 e salt, nunca em texto puro.
 
+## Singleton: gestão de sessão
+
+### Problema
+
+As sessões ativas precisam ficar em um único registro compartilhado pelo sistema. Se cada parte do código criasse seu próprio gerenciador, um logout feito em um lugar não seria visto pelos outros, e a sessão continuaria válida.
+
+### Papel do padrão no código
+
+| Papel no padrão | Classe no projeto | Responsabilidade |
+|---|---|---|
+| Singleton | `GerenciadorSessao` | Garante uma única instância (controlada em `__new__`) e oferece acesso global às sessões ativas |
+
+A criação da instância é protegida por uma trava (`threading.Lock`), para que duas requisições simultâneas não criem dois gerenciadores.
+
+### Decisões de segurança
+
+| Ponto observado na Decathlon | Decisão no nosso projeto |
+|---|---|
+| Teste de logout: após sair, o botão "Voltar" não deve reabrir o perfil | O logout apaga o token da sessão no servidor, então voltar no navegador não recupera o acesso |
+| "Alterar sua palavra-passe irá desconectar todos os seus serviços" | `encerrar_todas()` desconecta o usuário de todos os dispositivos |
+| Menu "Dispositivos conectados" | `dispositivos_conectados()` lista as sessões ativas do usuário |
+
+As sessões também expiram após 30 minutos sem uso.
+
+## Integração entre os padrões
+
+Depois que qualquer autenticador aprova o login, o método `_iniciar_sessao()` do `ServicoLogin` chama `GerenciadorSessao().criar_sessao()`. Assim, todas as formas de login registram a sessão no mesmo lugar.
+
+
 ## Código-fonte
+
+### Factory Method
 
 Arquivo: `docs/Base/Relatorios/subequipe01/codigo/factory_method_autenticacao.py`
 
 [factory_method_autenticacao.py](/Base/Relatorios/subequipe01/codigo/factory_method_autenticacao.py ':include :type=code python')
 
+### Singleton
+
+Arquivo: `docs/Base/Relatorios/subequipe01/codigo/singleton_sessao.py`
+
+[singleton_sessao.py](/Base/Relatorios/subequipe01/codigo/singleton_sessao.py ':include :type=code python')
+
 ## Histórico de versão
 
 | Versão | Data | Descrição | Autor |
 |---|---|---|---|
-| 1.0 | 16/10/2026 | Criação da página de implementação do Factory Method | Mariana Ribeiro |
+| 1.0 | 16/10/2026 | Criação da página de implementação do Factory Method e do Singleton | Mariana Ribeiro |
