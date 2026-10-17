@@ -29,23 +29,24 @@ Utilizando os papéis de código e as decisções de segurança determinados na 
 
 ## Modelagem UML: Factory Method
 
-- Participantes:
+O diagrama UML a seguir segue a estrutura de código referente ao Fluxo A utilizando o Factory Method:
 
-- Imagem:
+![Diagrama UML - Factory Method](../subequipe01/img%20diagramas/Diagrama_FactoryMethod.png)
+<p align="center"<sub>Fonte: Elaborado pelos autores da Subequipe 1: Samuel Felipe Lira de Souza, 2026.</sub></p>
 
 ---
 
 ## Modelagem UML: Singlethon
 
-- Participantes:
 
-- Imagem:
 
 ---
 
 ## Referências
 
--
+ - [Refactoring Guru (Factory Method)](https://refactoring.guru/factory-method)
+- [Refactoring Guru (Singleton)](https://refactoring.guru/singleton)
+- [Draw.IO]()
 
 ---
 
