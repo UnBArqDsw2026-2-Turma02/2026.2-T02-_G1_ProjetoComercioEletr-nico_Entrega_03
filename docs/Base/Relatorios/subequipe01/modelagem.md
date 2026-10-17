@@ -15,9 +15,9 @@ A tabela a seguir detalha a divisão de responsabilidades, o fluxo de co-criaç�
 
 | Etapa / Tópico do Relatório | Autor(a) Principal | Revisor(a) em Par | Evidência / Commit |
 | :--- | :--- | :--- | :---: |
-| **Introdução e metodologia** | Samuel Felipe Lira de Souza |  |  |
-| **Modelagem UML: Factory Method** | Samuel Felipe Lira de Souza |  |  |
-| **Modelagem UML: Singlethon** | Samuel Felipe Lira de Souza |  |  |
+| **Introdução e metodologia** | Samuel Felipe |  |  |
+| **Modelagem UML: Factory Method** | Samuel Felipe |  |  |
+| **Modelagem UML: Singlethon** | Samuel Felipe |  |  |
 
 ---
 
@@ -32,13 +32,16 @@ Utilizando os papéis de código e as decisções de segurança determinados na 
 O diagrama UML a seguir segue a estrutura de código referente ao Fluxo A utilizando o Factory Method:
 
 ![Diagrama UML - Factory Method](../subequipe01/img%20diagramas/Diagrama_FactoryMethod.png)
-<p align="center"<sub>Fonte: Elaborado pelos autores da Subequipe 1: Samuel Felipe Lira de Souza, 2026.</sub></p>
+<p align="center"<sub>Fonte: Elaborado pelos autores da Subequipe 1: Samuel Felipe, 2026.</sub></p>
 
 ---
 
 ## Modelagem UML: Singlethon
 
+O diagrama UML a seguir segue a estrutura de código referente ao Fluxo A utilizando o Singlethon:
 
+![Diagrama UML - Singlethon](../subequipe01/img%20diagramas/Diagrama_Singleton.png)
+<p align="center"<sub>Fonte: Elaborado pelos autores da Subequipe 1: Samuel Felipe, 2026.</sub></p>
 
 ---
 
@@ -46,7 +49,7 @@ O diagrama UML a seguir segue a estrutura de código referente ao Fluxo A utiliz
 
  - [Refactoring Guru (Factory Method)](https://refactoring.guru/factory-method)
 - [Refactoring Guru (Singleton)](https://refactoring.guru/singleton)
-- [Draw.IO]()
+- [Draw.IO](https://www.drawio.com/)
 
 ---
 
@@ -56,3 +59,4 @@ O diagrama UML a seguir segue a estrutura de código referente ao Fluxo A utiliz
 >| :----: | :--: |:--------: | :---: | :-----: |
 >| 0.1 | 17/10/2026 | Estruturação da página de modelagem do Factory Method e Singlethon | Samuel Felipe |  |
 >| 0.2 | 17/10/2026 | Adição da Introdução/Visão Geral e metodologia | Samuel Felipe |  |
+>| 0.3 | 17/10/2026 | Adição de informações e diagrama UML do Factory Method e Singlethon | Samuel Felipe |  |
