@@ -17,7 +17,36 @@ A implementação do [modelo UML](modelagem.md) está em `src/subequipe02`, no p
 
 ## 2. Tradução realizada pelo Adapter
 
-O cliente guarda uma referência do tipo `CatalogoProdutos`. A montagem dos objetos, em `Main`, fornece uma instância de `CatalogoAdapter` a `BuscaProdutos`. Assim, o código de busca não conhece `CatalogoExternoSimulado`, `consultarItens` ou `ItemExterno`.
+O **Target**, `CatalogoProdutos`, declara a operação e o tipo de retorno que a busca espera:
+
+```java
+public interface CatalogoProdutos {
+    List<Produto> buscarProdutos(String termo);
+}
+```
+
+O **Client**, `BuscaProdutos`, recebe esse contrato no construtor e encaminha a pesquisa por ele. A classe não conhece `CatalogoExternoSimulado`, `consultarItens` ou `ItemExterno`.
+
+```java
+private final CatalogoProdutos catalogo;
+
+public List<Produto> pesquisar(String termo) {
+    return catalogo.buscarProdutos(termo);
+}
+```
+
+O **Adaptee**, `CatalogoExternoSimulado`, disponibiliza uma operação e um formato de saída diferentes. Ele seleciona os itens fictícios pela descrição; a lista vazia resulta naturalmente quando nenhum item passa pelo filtro.
+
+```java
+public List<ItemExterno> consultarItens(String termo) {
+    String trecho = Objects.requireNonNull(termo, "termo").toLowerCase(Locale.ROOT);
+    return ITENS.stream()
+            .filter(item -> item.getDescricao().toLowerCase(Locale.ROOT).contains(trecho))
+            .toList();
+}
+```
+
+Em `Main`, a montagem fornece o **Adapter** ao cliente por meio do Target:
 
 ```java
 CatalogoExternoSimulado fornecedor = new CatalogoExternoSimulado();
@@ -25,7 +54,7 @@ CatalogoProdutos catalogo = new CatalogoAdapter(fornecedor);
 BuscaProdutos busca = new BuscaProdutos(catalogo);
 ```
 
-Em `CatalogoAdapter.buscarProdutos`, a operação esperada é traduzida para `catalogoExterno.consultarItens(termo)`. Cada `ItemExterno` retornado dá origem a um `Produto`:
+O **Adapter**, `CatalogoAdapter`, declara `implements CatalogoProdutos` e guarda a instância de `CatalogoExternoSimulado` recebida no construtor. Em `buscarProdutos`, ele traduz a chamada para `consultarItens(termo)` e cria um `Produto` para cada `ItemExterno` retornado:
 
 ```java
 return catalogoExterno.consultarItens(termo).stream()
@@ -69,3 +98,4 @@ Esta implementação não inclui estoque, carrinho, checkout, APIs externas ou u
 | Versão | Data | Descrição | Revisão |
 | --- | --- | --- | --- |
 | 1.0 | 18/10/2026 | Implementação Java do Adapter e documentação da correspondência entre modelo e código, com apoio de IA. | Pendente de revisão pela subequipe. |
+| 1.1 | 18/10/2026 | Revisão dos trechos de código dos quatro participantes do padrão e da ligação entre eles. | Pendente de revisão pela subequipe. |

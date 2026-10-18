@@ -16,7 +16,7 @@
         - [Execução](/Base/Relatorios/subequipe01/execucao.md)
         - [IA Generativa](/Base/Relatorios/subequipe01/ia_generativa.md)
 
-      - [Sub-Equipe 02](/Base/Relatorios/1.1.2.SubEquipe_02.md)
+      - [Sub-Equipe 02](/Base/Relatorios/subequipe02/subequipe02.md)
         - [Apresentação da equipe](/Base/Relatorios/subequipe02/subequipe02.md)
         - [GoF Estrutural](/Base/Relatorios/subequipe02/gof_estrutural.md)
         - [Modelagem UML](/Base/Relatorios/subequipe02/modelagem.md)
