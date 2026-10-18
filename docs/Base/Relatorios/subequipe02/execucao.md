@@ -53,6 +53,6 @@ A consulta `"Bola"` confirma a tradução de `BOLA-01 / Bola de futebol / 12990`
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.1 | 18/10/2026 | Revisão dos comandos de reprodução para interromper a sequência em caso de erro. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.2 | 18/10/2026 | Atualização da página para manter apenas os comandos e resultados verificáveis. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.1 | 18/10/2026 | Revisão dos comandos de reprodução para interromper a sequência em caso de erro. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.2 | 18/10/2026 | Atualização da página para manter apenas os comandos e resultados verificáveis. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
