@@ -29,13 +29,14 @@
   <text x="50" y="68" class="subtitle">Proposta acadêmica para a busca de produtos; o catálogo externo é simulado.</text>
 
   <!-- Client -->
-  <rect x="50" y="105" width="350" height="160" rx="3" fill="#eaf3ff" class="box"/>
+  <rect x="50" y="105" width="350" height="190" rx="3" fill="#eaf3ff" class="box"/>
   <text x="225" y="132" class="stereotype">«Client»</text>
   <text x="225" y="157" class="name">BuscaProdutos</text>
   <line x1="50" y1="172" x2="400" y2="172" class="divider"/>
-  <text x="66" y="197" class="member">− catalogo: CatalogoProdutos</text>
+  <text x="66" y="197" class="member">- catalogo: CatalogoProdutos</text>
   <line x1="50" y1="210" x2="400" y2="210" class="divider"/>
-  <text x="66" y="237" class="member">+ pesquisar(termo: String): List&lt;Produto&gt;</text>
+  <text x="66" y="237" class="member">+ BuscaProdutos(catalogo: CatalogoProdutos)</text>
+  <text x="66" y="266" class="member">+ pesquisar(termo: String): List&lt;Produto&gt;</text>
 
   <!-- Target -->
   <rect x="550" y="105" width="400" height="160" rx="3" fill="#ecfdf5" class="box"/>
@@ -50,7 +51,7 @@
   <text x="750" y="392" class="stereotype">«Adapter»</text>
   <text x="750" y="417" class="name">CatalogoAdapter</text>
   <line x1="550" y1="432" x2="950" y2="432" class="divider"/>
-  <text x="566" y="458" class="member">− catalogoExterno: CatalogoExternoSimulado</text>
+  <text x="566" y="458" class="member">- catalogoExterno: CatalogoExternoSimulado</text>
   <line x1="550" y1="472" x2="950" y2="472" class="divider"/>
   <text x="566" y="500" class="member">+ CatalogoAdapter(catalogoExterno:</text>
   <text x="586" y="524" class="member">CatalogoExternoSimulado)</text>
@@ -68,28 +69,30 @@
   <rect x="50" y="605" width="350" height="145" rx="3" fill="#f8fafc" class="box"/>
   <text x="225" y="636" class="name">Produto</text>
   <line x1="50" y1="650" x2="400" y2="650" class="divider"/>
-  <text x="66" y="678" class="member">− id: String</text>
-  <text x="66" y="705" class="member">− nome: String</text>
-  <text x="66" y="732" class="member">− precoAtual: BigDecimal</text>
+  <text x="66" y="678" class="member">- id: String</text>
+  <text x="66" y="705" class="member">- nome: String</text>
+  <text x="66" y="732" class="member">- precoAtual: BigDecimal</text>
 
   <rect x="1070" y="605" width="385" height="145" rx="3" fill="#f8fafc" class="box"/>
   <text x="1262" y="636" class="name">ItemExterno</text>
   <line x1="1070" y1="650" x2="1455" y2="650" class="divider"/>
-  <text x="1086" y="678" class="member">− codigo: String</text>
-  <text x="1086" y="705" class="member">− descricao: String</text>
-  <text x="1086" y="732" class="member">− valorEmCentavos: long</text>
+  <text x="1086" y="678" class="member">- codigo: String</text>
+  <text x="1086" y="705" class="member">- descricao: String</text>
+  <text x="1086" y="732" class="member">- valorEmCentavos: long</text>
 
   <!-- UML relationships -->
   <path d="M 400 185 H 548" class="edge" marker-end="url(#open-arrow)"/>
-  <text x="423" y="173" class="edge-label">usa 1</text>
+  <text x="455" y="173" class="edge-label">usa</text>
+  <text x="528" y="207" class="edge-label">1</text>
   <path d="M 750 365 V 267" class="dependency" marker-end="url(#realization)"/>
   <text x="766" y="321" class="edge-label">realiza</text>
   <path d="M 950 447 H 1068" class="edge" marker-end="url(#open-arrow)"/>
-  <text x="970" y="437" class="edge-label">envolve 1</text>
+  <text x="976" y="437" class="edge-label">envolve</text>
+  <text x="1050" y="468" class="edge-label">1</text>
   <path d="M 1262 535 V 603" class="dependency" marker-end="url(#open-arrow)"/>
   <text x="1277" y="573" class="edge-label">retorna</text>
   <path d="M 550 530 L 401 640" class="dependency" marker-end="url(#open-arrow)"/>
-  <text x="439" y="574" class="edge-label">converte em</text>
+  <text x="410" y="553" class="edge-label">converte em</text>
 
   <rect x="50" y="775" width="1405" height="38" rx="4" fill="#f1f5f9"/>
   <text x="64" y="799" class="note">Linha contínua: associação navegável. Linha tracejada com triângulo: realização. Linha tracejada com seta: dependência.</text>

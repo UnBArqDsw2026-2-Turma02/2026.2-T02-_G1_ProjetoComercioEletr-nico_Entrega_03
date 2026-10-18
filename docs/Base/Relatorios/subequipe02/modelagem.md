@@ -10,7 +10,7 @@ O modelo retoma a busca e o conceito de `Produto` da Entrega 02. `CatalogoProdut
 
 ![Diagrama de classes UML do Adapter de catálogo: BuscaProdutos usa CatalogoProdutos, CatalogoAdapter realiza essa interface e envolve CatalogoExternoSimulado](../../../assets/images/subequipe02-adapter-classes.svg)
 
-*Figura 1 — Diagrama de classes da solução proposta. Atributos têm visibilidade privada (`−`) e operações têm visibilidade pública (`+`). O diagrama concentra as operações relevantes ao padrão; construtores e métodos de acesso dos objetos de dados foram omitidos.*
+*Figura 1 — Diagrama de classes da solução proposta. Atributos têm visibilidade privada (`-`) e operações têm visibilidade pública (`+`). O diagrama concentra as operações relevantes ao padrão; construtores e métodos de acesso dos objetos de dados foram omitidos.*
 
 | Papel ou objeto | Elemento no modelo | Responsabilidade |
 | --- | --- | --- |
@@ -28,19 +28,19 @@ O modelo retoma a busca e o conceito de `Produto` da Entrega 02. `CatalogoProdut
 3. Ao receber `buscarProdutos(termo)`, o adaptador repassa o mesmo termo para `consultarItens(termo)`. O catálogo simulado executa a consulta e devolve uma lista de `ItemExterno`.
 4. Para cada item retornado, o adaptador cria um `Produto`: `codigo → id`, `descricao → nome` e `valorEmCentavos → precoAtual`. A lista de produtos resultante é devolvida à busca.
 
-As setas tracejadas para `ItemExterno` e `Produto` indicam dependências de retorno e conversão. Não representam herança nem posse do ciclo de vida desses objetos. A associação entre adaptador e catálogo simulado também não declara composição: o adaptador recebe uma instância já criada.
+As setas tracejadas para `ItemExterno` e `Produto` indicam dependências de retorno e conversão. Não representam herança nem posse do ciclo de vida desses objetos. A associação entre adaptador e catálogo simulado também não declara **composição UML** (losango preenchido): o adaptador recebe uma instância já criada.
 
 ## 4. Decisões de modelagem e critérios de coerência
 
 | Decisão | Motivo e consequência para a implementação Java |
 | --- | --- |
 | `BuscaProdutos` depende de `CatalogoProdutos`. | Permite fornecer `CatalogoAdapter` sem inserir nomes e campos do fornecedor no cliente. |
-| `CatalogoAdapter` guarda `CatalogoExternoSimulado`. | Demonstra o **Adapter de objeto** por composição de comportamento: a chamada é delegada à instância recebida. |
-| `Produto.precoAtual` usa `BigDecimal`; `ItemExterno.valorEmCentavos` usa `long`. | O adaptador deve converter centavos com escala decimal 2, por exemplo `BigDecimal.valueOf(12990L, 2) = 129.90`, sem passar por `float` ou `double`. |
+| `CatalogoAdapter` guarda `CatalogoExternoSimulado`. | Demonstra o **Adapter de objeto** ao delegar para uma instância recebida; essa colaboração não exige que o adaptador controle seu ciclo de vida. |
+| `Produto.precoAtual` usa `BigDecimal`; `ItemExterno.valorEmCentavos` usa `long`. | O `Decimal` conceitual da Entrega 02 é concretizado como `BigDecimal` em Java. O adaptador deve converter centavos com escala decimal 2, por exemplo `BigDecimal.valueOf(12990L, 2) = 129.90`, sem passar por `float` ou `double`. |
 | `Produto` contém apenas três atributos. | É um recorte do `Produto` mais amplo da Entrega 02, suficiente para demonstrar a tradução sem alegar equivalência ao modelo completo. |
 | A pesquisa fica restrita ao catálogo simulado. | Estoque, carrinho, checkout e pagamento não são modelados neste exemplo do padrão. |
 
-**Cenário que deve ser preservado no código e na demonstração:** ao pesquisar um termo que encontra o item `codigo = "BOLA-01"`, `descricao = "Bola de futebol"`, `valorEmCentavos = 12990`, a busca recebe `Produto` com `id = "BOLA-01"`, `nome = "Bola de futebol"` e `precoAtual = 129.90` (`BigDecimal`, exibível como **R$ 129,90**). Uma pesquisa sem correspondência deve produzir uma lista vazia. O catálogo simulado é responsável por selecionar os itens; o adaptador é responsável pela tradução da interface e dos dados.
+**Cenário que deve ser preservado no código e na demonstração:** ao pesquisar `"Bola"`, o catálogo simulado encontra o item `codigo = "BOLA-01"`, `descricao = "Bola de futebol"`, `valorEmCentavos = 12990`. A busca recebe `Produto` com `id = "BOLA-01"`, `nome = "Bola de futebol"` e `precoAtual = 129.90` (`BigDecimal`, exibível como **R$ 129,90**). Uma pesquisa sem correspondência deve produzir uma lista vazia, nunca `null`. O catálogo simulado é responsável por selecionar os itens; o adaptador preserva a quantidade e a ordem dos resultados enquanto traduz a interface e os dados.
 
 ## 5. Rastreabilidade e limites
 
@@ -53,3 +53,4 @@ O diagrama é uma especificação para a próxima etapa. Ainda não há implemen
 | Versão | Data | Descrição | Revisão |
 | --- | --- | --- | --- |
 | 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | Pendente de revisão pela subequipe. |
+| 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | Pendente de revisão pela subequipe. |
