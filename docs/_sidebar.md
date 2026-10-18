@@ -6,7 +6,7 @@
 - **Base**
   - [Apresentação do Módulo - Padrões de Projeto](/Base/1.PadroesDeProjeto.md)
   - [Documentos de Gestão](/Base/1.2.ParticipacoesPadroesDeProjeto.md)
-  - [Relatorios e Estudos Complementares](/Base/1.3.IniciativasExtras.md)
+  - [Iniciativas extras](/Base/1.3.IniciativasExtras.md)
 
   * **Relatórios**
 
@@ -34,5 +34,4 @@
         - [Implementação](/Base/Relatorios/1.1.3.subequipe-03/implementacaoEquipe03.md)
         - [IA Generativa e Lições Aprendidas](/docs/Base/Relatorios/1.1.3.subequipe-03/iaEquipe03.md)
         - [Gestão e Participações](/Base/Relatorios/1.1.3.subequipe-03/gestaoEquipe03.md)
-  - [Documentos de Gestão](/Base/1.2.ParticipacoesPadroesDeProjeto.md)
-  - [Relatorios e Estudos Complementares](/Base/1.3.IniciativasExtras.md)
+  

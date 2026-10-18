@@ -13,18 +13,18 @@ A tabela a seguir apresenta a divisão de responsabilidades, a revisão em pares
 
 | Etapa / Tópico do Relatório | Autor(a) Principal | Revisor(a) em Par | Evidência / Commit |
 | :--- | :--- | :--- | :---: |
-| 1. Introdução | A definir | A definir | A definir |
-| 2. Pré-requisitos e estrutura dos arquivos | A definir | A definir | A definir |
-| 3.1. Execução manual do Singleton | A definir | A definir | A definir |
-| 3.2. Execução manual do Factory Method | A definir | A definir | A definir |
-| 4. Testes automatizados com `unittest` | A definir | A definir | A definir |
-| 5. Resultado da suíte de testes | A definir | A definir | A definir |
-| 6. Critérios de Validação | A definir | A definir | A definir |
-| 7. Limitações da Demonstração | A definir | A definir | A definir |
-| 8. Evidências de execução e capturas do terminal | A definir | A definir | A definir |
-| 9. Considerações Finais | A definir | A definir | A definir |
-| 10. Referências bibliográficas | A definir | A definir | A definir |
-| 11. Histórico de versões e revisão documental | A definir | A definir | A definir |
+| 1. Introdução | [Dylan Cavalcante](https://github.com/dylancavalcante) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 2. Pré-requisitos e estrutura dos arquivos | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Mariana Ribeiro](https://github.com/marianagonzaga0)| A definir |
+| 3.1. Execução manual do Singleton | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)  | [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 3.2. Execução manual do Factory Method | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)  |[Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 4. Testes automatizados com `unittest` | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 5. Resultado da suíte de testes | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 6. Critérios de Validação | [Dylan Cavalcante](https://github.com/dylancavalcante)  |[Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 7. Limitações da Demonstração | [Dylan Cavalcante](https://github.com/dylancavalcante) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 8. Evidências de execução e capturas do terminal | [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Samuel Felipe](https://github.com/TerminaKng05)| A definir |
+| 9. Considerações Finais | [Samuel Felipe](https://github.com/TerminaKng05) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 10. Referências bibliográficas | [Samuel Felipe](https://github.com/TerminaKng05)| [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 11. Histórico de versões e revisão documental | [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
 
 ## 1. Introdução
 
