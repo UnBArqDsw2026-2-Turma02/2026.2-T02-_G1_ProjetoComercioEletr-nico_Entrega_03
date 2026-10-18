@@ -4,7 +4,7 @@
 
 - **Domínio:** Fluxo A (Gestão de Usuário, Autenticação e Perfil)
 - **Sistema de referência:** DECATHLON
-- **Tecnologia:** Python
+- **Tecnologia:** Python 3.10+
 
 ## Divisão de Responsabilidades e Revisão em Pares
 

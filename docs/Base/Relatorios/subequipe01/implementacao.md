@@ -4,7 +4,7 @@
 
 - **Domínio:** Fluxo A — Gestão de Usuário, Autenticação e Perfil
 - **Sistema de referência:** DECATHLON
-- **Tecnologia:** Python 3.10 +
+- **Tecnologia:** Python 3.10+
 - **Arquivos principais:** `factory_method_autenticacao.py` e `singleton_sessao.py`
 
 ## Divisão de Responsabilidades e Revisão em Pares
