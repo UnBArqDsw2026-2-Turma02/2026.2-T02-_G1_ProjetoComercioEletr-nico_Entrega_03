@@ -52,7 +52,8 @@ O diagrama orientou a [implementação Java](/Base/Relatorios/subequipe02/implem
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.2 | 18/10/2026 | Ligação entre modelo, código Java e execução da etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.3 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.2 | 18/10/2026 | Ligação entre modelo, código Java e execução da etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.3 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.4 | 18/10/2026 | Documentação da proposta de explicitar a dependência entre CatalogoAdapter e ItemExterno, com apoio de IA generativa, mantendo a figura original. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Nayra Silva Nery](https://github.com/NayraNery127) |
