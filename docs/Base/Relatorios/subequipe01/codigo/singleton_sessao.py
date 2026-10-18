@@ -1,269 +1,176 @@
+"""Gerenciador de sessões usando o padrão GoF Singleton.
+
+Esta implementação é didática e mantém o estado apenas na memória deste processo.
+Em produção, sessões compartilhadas entre múltiplos workers/servidores devem usar
+armazenamento compartilhado (por exemplo, Redis ou um banco de dados).
 """
-Padrão GoF Criacional: Factory Method
-Contexto: Fluxo A - Gestão de usuário, autenticação e perfil (Subequipe 01)
 
-Estrutura do padrão:
-  Product           -> Autenticador
-  ConcreteProduct   -> AutenticadorLocal, AutenticadorGoogle, AutenticadorFacebook,
-                       AutenticadorApple, AutenticadorCodigoEmail
-  Creator           -> ServicoLogin (declara o factory method criar_autenticador())
-  ConcreteCreator   -> LoginLocal, LoginGoogle, LoginFacebook, LoginApple, LoginCodigoEmail
-
-Regras de segurança baseadas na análise da Decathlon (ver documentação):
-  - Mensagem de erro genérica (evita enumeração de usuários)
-  - Bloqueio temporário após 5 tentativas erradas (a Decathlon não bloqueou)
-  - Senha armazenada com hash + salt (nunca em texto puro)
-  - Código de uso único por e-mail, válido por 15 minutos e usado só uma vez
-
-Integração com o Singleton: ao autenticar, a sessão é registrada no
-GerenciadorSessao (ver singleton_sessao.py).
-"""
 from __future__ import annotations
 
-import hashlib
-import hmac
 import secrets
+import threading
 import time
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
-
-from singleton_sessao import GerenciadorSessao
-
-MENSAGEM_GENERICA = "E-mail ou senha inválidos."
-MAX_TENTATIVAS = 5
-BLOQUEIO_SEGUNDOS = 15 * 60
-VALIDADE_CODIGO_SEGUNDOS = 15 * 60
+from typing import Any
 
 
-# ---------------------------------------------------------------------------
-# Infraestrutura simulada (no projeto real seria o banco de dados)
-# ---------------------------------------------------------------------------
-def gerar_hash(senha: str, salt: bytes) -> bytes:
-    return hashlib.pbkdf2_hmac("sha256", senha.encode(), salt, 100_000)
+TEMPO_INATIVIDADE_SEGUNDOS = 30 * 60
 
 
-class BancoUsuarios:
-    def __init__(self):
-        self.usuarios: dict[str, dict] = {}
-        self.falhas: dict[str, dict] = {}    # tentativas por e-mail (existindo ou não)
-        self.codigos: dict[str, dict] = {}   # códigos de uso único pendentes
+class GerenciadorSessao:
+    """Mantém uma única instância por processo Python e gerencia sessões ativas."""
 
-    def cadastrar(self, email: str, senha: str, nome: str) -> None:
-        salt = secrets.token_bytes(16)
-        self.usuarios[email.lower()] = {"nome": nome, "salt": salt, "hash": gerar_hash(senha, salt)}
+    _instancia: GerenciadorSessao | None = None
+    _lock_instancia = threading.Lock()
 
-    def buscar(self, email: str) -> dict | None:
-        return self.usuarios.get(email.lower())
+    def __new__(cls) -> GerenciadorSessao:
+        # A trava protege somente a criação da instância.
+        with cls._lock_instancia:
+            if cls._instancia is None:
+                instancia = super().__new__(cls)
+                instancia._sessoes = {}  # email -> token -> metadados da sessão
+                instancia._lock_sessoes = threading.RLock()
+                cls._instancia = instancia
+        return cls._instancia
 
+    @staticmethod
+    def _normalizar_email(email: str) -> str:
+        return email.strip().casefold()
 
-# Tokens que o "provedor OAuth" reconheceria (simulação da API externa)
-TOKENS_VALIDOS = {
-    "google": {"tok-google-123": "ana@gmail.com"},
-    "facebook": {"tok-facebook-456": "bruno@hotmail.com"},
-    "apple": {"tok-apple-789": "carla@icloud.com"},
-}
+    def criar_sessao(
+        self,
+        email: str,
+        dispositivo: str = "dispositivo desconhecido",
+    ) -> str:
+        """Cria uma sessão com token criptograficamente aleatório.
 
+        O prazo de inatividade é renovado quando validar_sessao() confirma uso
+        válido da sessão. O token deve ser tratado como segredo pelo chamador.
+        """
+        email_normalizado = self._normalizar_email(email)
+        if not email_normalizado:
+            raise ValueError("O e-mail é obrigatório para criar uma sessão.")
 
-@dataclass
-class ResultadoAutenticacao:
-    sucesso: bool
-    mensagem: str
-    email: str | None = None
-    token_sessao: str | None = None
-
-
-# ---------------------------------------------------------------------------
-# PRODUCT
-# ---------------------------------------------------------------------------
-class Autenticador(ABC):
-    def __init__(self, banco: BancoUsuarios):
-        self.banco = banco
-
-    @abstractmethod
-    def autenticar(self, credenciais: dict) -> ResultadoAutenticacao:
-        ...
-
-
-# ---------------------------------------------------------------------------
-# CONCRETE PRODUCTS
-# ---------------------------------------------------------------------------
-class AutenticadorLocal(Autenticador):
-    """Login com e-mail e senha."""
-
-    def autenticar(self, credenciais: dict) -> ResultadoAutenticacao:
-        email = credenciais.get("email", "").lower()
-        senha = credenciais.get("senha", "")
-        registro = self.banco.falhas.setdefault(email, {"qtd": 0, "bloqueado_ate": 0.0})
-
-        # Bloqueio vale até para e-mails inexistentes, para não revelar quem existe
-        if registro["bloqueado_ate"] > time.time():
-            return ResultadoAutenticacao(False, "Muitas tentativas. Tente novamente em 15 minutos.")
-
-        usuario = self.banco.buscar(email)
-        senha_ok = usuario is not None and hmac.compare_digest(
-            gerar_hash(senha, usuario["salt"]), usuario["hash"]
-        )
-
-        if not senha_ok:
-            registro["qtd"] += 1
-            if registro["qtd"] >= MAX_TENTATIVAS:
-                registro["bloqueado_ate"] = time.time() + BLOQUEIO_SEGUNDOS
-                registro["qtd"] = 0
-            # Mesma mensagem para e-mail inexistente e senha errada
-            return ResultadoAutenticacao(False, MENSAGEM_GENERICA)
-
-        registro["qtd"] = 0
-        return ResultadoAutenticacao(True, "Login local efetuado.", email)
-
-
-class AutenticadorSocial(Autenticador):
-    """Base comum para login social (OAuth). Cada provedor define seu nome."""
-    provedor = ""
-
-    def autenticar(self, credenciais: dict) -> ResultadoAutenticacao:
-        token = credenciais.get("token", "")
-        email = TOKENS_VALIDOS.get(self.provedor, {}).get(token)
-        if email is None:
-            return ResultadoAutenticacao(False, f"Não foi possível autenticar com {self.provedor.title()}.")
-        return ResultadoAutenticacao(True, f"Login via {self.provedor.title()} efetuado.", email)
-
-
-class AutenticadorGoogle(AutenticadorSocial):
-    provedor = "google"
-
-
-class AutenticadorFacebook(AutenticadorSocial):
-    provedor = "facebook"
-
-
-class AutenticadorApple(AutenticadorSocial):
-    provedor = "apple"
-
-
-class AutenticadorCodigoEmail(Autenticador):
-    """'Obtenha uma senha de uso único': código de 6 dígitos enviado por e-mail."""
-
-    def enviar_codigo(self, email: str) -> str | None:
-        email = email.lower()
-        print("  Se o e-mail estiver cadastrado, você receberá um código.")  # resposta neutra
-        if self.banco.buscar(email) is None:
-            return None
-        codigo = f"{secrets.randbelow(1_000_000):06d}"
-        self.banco.codigos[email] = {"codigo": codigo, "expira": time.time() + VALIDADE_CODIGO_SEGUNDOS}
-        return codigo  # simulação: no sistema real, o código só iria para o e-mail
-
-    def autenticar(self, credenciais: dict) -> ResultadoAutenticacao:
-        email = credenciais.get("email", "").lower()
-        codigo = credenciais.get("codigo", "")
-        pendente = self.banco.codigos.pop(email, None)  # pop = código só pode ser usado uma vez
-
-        if (pendente is None
-                or pendente["expira"] < time.time()
-                or not hmac.compare_digest(pendente["codigo"], codigo)):
-            return ResultadoAutenticacao(False, "Código inválido ou expirado.")
-        return ResultadoAutenticacao(True, "Login por código de uso único efetuado.", email)
-
-
-# ---------------------------------------------------------------------------
-# CREATOR: declara o factory method e usa o produto sem saber qual é
-# ---------------------------------------------------------------------------
-class ServicoLogin(ABC):
-    def __init__(self, banco: BancoUsuarios):
-        self.banco = banco
-
-    @abstractmethod
-    def criar_autenticador(self) -> Autenticador:
-        """FACTORY METHOD: cada subclasse decide qual autenticador criar."""
-
-    def realizar_login(self, credenciais: dict) -> ResultadoAutenticacao:
-        autenticador = self.criar_autenticador()
-        resultado = autenticador.autenticar(credenciais)
-        if resultado.sucesso:
-            resultado.token_sessao = self._iniciar_sessao(resultado.email)
-        return resultado
-
-    def _iniciar_sessao(self, email: str) -> str:
-        # Singleton: todos os tipos de login registram a sessão no mesmo gerenciador
-        token = GerenciadorSessao().criar_sessao(email)
-        print(f"  [sessão] Sessão iniciada para {email} (token {token[:8]}...)")
+        agora = time.time()
+        token = secrets.token_urlsafe(32)
+        with self._lock_sessoes:
+            self._remover_expiradas_usuario(email_normalizado, agora)
+            self._sessoes.setdefault(email_normalizado, {})[token] = {
+                "criada_em": agora,
+                "ultima_atividade": agora,
+                "expira_em": agora + TEMPO_INATIVIDADE_SEGUNDOS,
+                "dispositivo": dispositivo,
+            }
         return token
 
+    def validar_sessao(self, email: str, token: str, renovar: bool = True) -> bool:
+        """Valida a sessão no servidor e, por padrão, renova o timeout de inatividade."""
+        email_normalizado = self._normalizar_email(email)
+        agora = time.time()
 
-# ---------------------------------------------------------------------------
-# CONCRETE CREATORS
-# ---------------------------------------------------------------------------
-class LoginLocal(ServicoLogin):
-    def criar_autenticador(self) -> Autenticador:
-        return AutenticadorLocal(self.banco)
+        with self._lock_sessoes:
+            sessoes_usuario = self._sessoes.get(email_normalizado)
+            if not sessoes_usuario:
+                return False
 
+            dados = sessoes_usuario.get(token)
+            if dados is None:
+                return False
 
-class LoginGoogle(ServicoLogin):
-    def criar_autenticador(self) -> Autenticador:
-        return AutenticadorGoogle(self.banco)
+            if dados["expira_em"] <= agora:
+                del sessoes_usuario[token]
+                if not sessoes_usuario:
+                    self._sessoes.pop(email_normalizado, None)
+                return False
 
+            if renovar:
+                dados["ultima_atividade"] = agora
+                dados["expira_em"] = agora + TEMPO_INATIVIDADE_SEGUNDOS
+            return True
 
-class LoginFacebook(ServicoLogin):
-    def criar_autenticador(self) -> Autenticador:
-        return AutenticadorFacebook(self.banco)
+    def sessoes_ativas(self, email: str) -> list[dict[str, Any]]:
+        """Lista metadados não sensíveis das sessões ativas, sem expor tokens."""
+        email_normalizado = self._normalizar_email(email)
+        agora = time.time()
+        with self._lock_sessoes:
+            self._remover_expiradas_usuario(email_normalizado, agora)
+            sessoes_usuario = self._sessoes.get(email_normalizado, {})
+            return [
+                {
+                    "criada_em": dados["criada_em"],
+                    "ultima_atividade": dados["ultima_atividade"],
+                    "expira_em": dados["expira_em"],
+                    "dispositivo": dados["dispositivo"],
+                }
+                for dados in sessoes_usuario.values()
+            ]
 
+    def dispositivos_conectados(self, email: str) -> list[dict[str, Any]]:
+        """Mantido como nome descritivo para compatibilidade com o exemplo anterior.
 
-class LoginApple(ServicoLogin):
-    def criar_autenticador(self) -> Autenticador:
-        return AutenticadorApple(self.banco)
+        Retorna metadados das sessões, não os tokens nem uma identificação
+        comprovada de dispositivos físicos.
+        """
+        return self.sessoes_ativas(email)
 
+    def encerrar_sessao(self, email: str, token: str) -> bool:
+        """Invalida uma única sessão (logout)."""
+        email_normalizado = self._normalizar_email(email)
+        with self._lock_sessoes:
+            sessoes_usuario = self._sessoes.get(email_normalizado)
+            if not sessoes_usuario or token not in sessoes_usuario:
+                return False
 
-class LoginCodigoEmail(ServicoLogin):
-    def criar_autenticador(self) -> AutenticadorCodigoEmail:
-        return AutenticadorCodigoEmail(self.banco)
+            del sessoes_usuario[token]
+            if not sessoes_usuario:
+                self._sessoes.pop(email_normalizado, None)
+            return True
 
+    def encerrar_todas(self, email: str) -> None:
+        """Invalida todas as sessões do usuário em relação a esta instância."""
+        email_normalizado = self._normalizar_email(email)
+        with self._lock_sessoes:
+            self._sessoes.pop(email_normalizado, None)
 
-# ---------------------------------------------------------------------------
-# CLIENTE: cada botão da tela de login corresponde a um ConcreteCreator
-# ---------------------------------------------------------------------------
-BOTOES_LOGIN = {
-    "local": LoginLocal,
-    "google": LoginGoogle,
-    "facebook": LoginFacebook,
-    "apple": LoginApple,
-    "codigo_email": LoginCodigoEmail,
-}
+    def _remover_expiradas_usuario(self, email: str, agora: float) -> None:
+        """Método interno. Deve ser chamado com _lock_sessoes adquirido."""
+        sessoes_usuario = self._sessoes.get(email)
+        if not sessoes_usuario:
+            return
 
+        expiradas = [
+            token
+            for token, dados in sessoes_usuario.items()
+            if dados["expira_em"] <= agora
+        ]
+        for token in expiradas:
+            del sessoes_usuario[token]
 
-def tentar(titulo: str, servico: ServicoLogin, credenciais: dict) -> None:
-    print(f"\n>> {titulo}")
-    resultado = servico.realizar_login(credenciais)
-    print(f"  {'OK' if resultado.sucesso else 'FALHA'}: {resultado.mensagem}")
+        if not sessoes_usuario:
+            self._sessoes.pop(email, None)
 
 
 if __name__ == "__main__":
-    banco = BancoUsuarios()
-    banco.cadastrar("rafaela@hotmail.com", "Senha@123", "Rafaela")
+    # Demonstração manual do Singleton e das operações de sessão.
+    gerenciador1 = GerenciadorSessao()
+    gerenciador2 = GerenciadorSessao()
 
-    local = BOTOES_LOGIN["local"](banco)
+    print("=== Teste de instância Singleton ===")
+    print(f"Gerenciador 1 (ID): {id(gerenciador1)}")
+    print(f"Gerenciador 2 (ID): {id(gerenciador2)}")
+    print(f"São a mesma instância? {'Sim' if gerenciador1 is gerenciador2 else 'Não'}")
 
-    print("=== 1. Login local ===")
-    tentar("Senha correta", local, {"email": "rafaela@hotmail.com", "senha": "Senha@123"})
-    tentar("E-mail que não existe", local, {"email": "nao_existe@gmail.com", "senha": "x"})
-    tentar("Senha errada (mesma mensagem: sem enumeração)", local,
-           {"email": "rafaela@hotmail.com", "senha": "errada"})
+    print("\n=== Teste de sessões ===")
+    email_teste = "usuario@exemplo.com"
+    token1 = gerenciador1.criar_sessao(email_teste, dispositivo="Navegador de teste")
+    token2 = gerenciador2.criar_sessao(email_teste, dispositivo="Segundo dispositivo")
+    print(f"Total de sessões ativas: {len(gerenciador1.sessoes_ativas(email_teste))}")
+    print(f"Primeira sessão válida? {gerenciador2.validar_sessao(email_teste, token1)}")
 
-    print("\n=== 2. Bloqueio após 5 tentativas ===")
-    for i in range(2, 6):
-        tentar(f"Senha errada #{i}", local, {"email": "rafaela@hotmail.com", "senha": "errada"})
-    tentar("Senha correta, mas conta bloqueada", local,
-           {"email": "rafaela@hotmail.com", "senha": "Senha@123"})
+    print("\nEncerrando uma sessão...")
+    print(f"Logout realizado? {gerenciador2.encerrar_sessao(email_teste, token1)}")
+    print(f"Sessões restantes: {len(gerenciador1.sessoes_ativas(email_teste))}")
 
-    print("\n=== 3. Login social ===")
-    tentar("Google com token válido", BOTOES_LOGIN["google"](banco), {"token": "tok-google-123"})
-    tentar("Facebook com token inválido", BOTOES_LOGIN["facebook"](banco), {"token": "falso"})
-    tentar("Apple com token válido", BOTOES_LOGIN["apple"](banco), {"token": "tok-apple-789"})
-
-    print("\n=== 4. Senha de uso único por e-mail ===")
-    servico_codigo = BOTOES_LOGIN["codigo_email"](banco)
-    codigo = servico_codigo.criar_autenticador().enviar_codigo("rafaela@hotmail.com")
-    print(f"  (simulação) código recebido no e-mail: {codigo}")
-    tentar("Código correto", servico_codigo, {"email": "rafaela@hotmail.com", "codigo": codigo})
-    tentar("Reusar o mesmo código", servico_codigo, {"email": "rafaela@hotmail.com", "codigo": codigo})
-
-    print("\n=== 5. Sessões registradas no Singleton ===")
-    print(f"  Dispositivos de rafaela@hotmail.com: {GerenciadorSessao().dispositivos_conectados('rafaela@hotmail.com')}")
+    print("\nEncerrando todas as sessões...")
+    gerenciador2.encerrar_todas(email_teste)
+    print(f"Sessões restantes: {len(gerenciador1.sessoes_ativas(email_teste))}")
+    print(f"Segunda sessão válida? {gerenciador1.validar_sessao(email_teste, token2)}")

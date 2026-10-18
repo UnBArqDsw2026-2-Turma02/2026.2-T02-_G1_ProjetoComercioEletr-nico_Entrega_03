@@ -16,11 +16,20 @@
         - [Execução](/Base/Relatorios/subequipe01/execucao.md)
         - [IA Generativa](/Base/Relatorios/subequipe01/ia_generativa.md)
 
-
-      - [Sub-Equipe 02](/Base/Relatorios/1.1.2.SubEquipe_02.md)
-      
-      - [Sub-Equipe 03](/Base/Relatorios/1.1.3.subequipe-03/1.1.3.SubEquipe_03.md)
-        - [Módulo - Padrões de Projeto](/Base/Relatorios/1.1.3.subequipe-03/padroesprojetoEquipe03.md)
+      - **Sub-Equipe 02**
+        - [Apresentação da equipe](/Base/Relatorios/subequipe02/subequipe02.md)
+        - [GoF Estrutural](/Base/Relatorios/subequipe02/gof_estrutural.md)
+        - [Modelagem](/Base/Relatorios/subequipe02/modelagem.md)
+        - [Implementação](/Base/Relatorios/subequipe02/implementacao.md)
+        - [Execução e Vídeo](/Base/Relatorios/subequipe02/execucao.md)
+        - [IA Generativa e Lições Aprendidas](/Base/Relatorios/subequipe02/ia_generativa.md)
+        - [Gestão e Participações](/Base/Relatorios/subequipe02/gestao.md)
+        
+      - **Sub-Equipe 03**
+        - [Apresentação da Equipe](/Base/Relatorios/1.1.3.subequipe-03/1.1.3.SubEquipe_03.md)
+        - [Modelagem - Padrão de Projeto Comportamental](/Base/Relatorios/1.1.3.subequipe-03/padroesprojetoEquipe03.md)
+        - [Implementação](/Base/Relatorios/1.1.3.subequipe-03/implementacaoEquipe03.md)
+        - [IA Generativa](/docs/Base/Relatorios/1.1.3.subequipe-03/iaEquipe03.md)
         - [Gestão e Desenvolvimento Colaborativo](/Base/Relatorios/1.1.3.subequipe-03/gestaoEquipe03.md)
   - [Documentos de Gestão](/Base/1.2.ParticipacoesPadroesDeProjeto.md)
   - [Relatorios e Estudos Complementares](/Base/1.3.IniciativasExtras.md)
