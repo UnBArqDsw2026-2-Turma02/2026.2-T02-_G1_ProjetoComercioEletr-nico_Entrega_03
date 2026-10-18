@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1510" height="830" viewBox="0 0 1510 830" role="img" aria-labelledby="title description">
+  <title id="title">Diagrama de classes UML do Adapter de catálogo da Subequipe 02</title>
+  <desc id="description">BuscaProdutos depende de CatalogoProdutos. CatalogoAdapter realiza essa interface e se associa a CatalogoExternoSimulado. O adaptador transforma ItemExterno em Produto.</desc>
+  <defs>
+    <marker id="open-arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 12 7 L 1 13" fill="none" stroke="#334155" stroke-width="2"/>
+    </marker>
+    <marker id="realization" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 16 9 L 1 17 Z" fill="white" stroke="#334155" stroke-width="2"/>
+    </marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #17212f; }
+      .title { font-size: 25px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #475569; }
+      .name { font-size: 19px; font-weight: 700; text-anchor: middle; }
+      .stereotype { font-size: 14px; font-style: italic; text-anchor: middle; fill: #475569; }
+      .member { font-size: 15px; }
+      .edge-label { font-size: 14px; fill: #334155; }
+      .note { font-size: 14px; fill: #334155; }
+      .box { stroke: #334155; stroke-width: 2; }
+      .divider { stroke: #64748b; stroke-width: 1.2; }
+      .edge { stroke: #334155; stroke-width: 2; fill: none; }
+      .dependency { stroke: #334155; stroke-width: 2; stroke-dasharray: 8 6; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1510" height="830" fill="white"/>
+  <text x="50" y="42" class="title">Adapter de catálogo — diagrama de classes</text>
+  <text x="50" y="68" class="subtitle">Proposta acadêmica para a busca de produtos; o catálogo externo é simulado.</text>
+
+  <!-- Client -->
+  <rect x="50" y="105" width="350" height="190" rx="3" fill="#eaf3ff" class="box"/>
+  <text x="225" y="132" class="stereotype">«Client»</text>
+  <text x="225" y="157" class="name">BuscaProdutos</text>
+  <line x1="50" y1="172" x2="400" y2="172" class="divider"/>
+  <text x="66" y="197" class="member">- catalogo: CatalogoProdutos</text>
+  <line x1="50" y1="210" x2="400" y2="210" class="divider"/>
+  <text x="66" y="237" class="member">+ BuscaProdutos(catalogo: CatalogoProdutos)</text>
+  <text x="66" y="266" class="member">+ pesquisar(termo: String): List&lt;Produto&gt;</text>
+
+  <!-- Target -->
+  <rect x="550" y="105" width="400" height="160" rx="3" fill="#ecfdf5" class="box"/>
+  <text x="750" y="132" class="stereotype">«Target» «interface»</text>
+  <text x="750" y="157" class="name">CatalogoProdutos</text>
+  <line x1="550" y1="172" x2="950" y2="172" class="divider"/>
+  <text x="566" y="202" class="member">+ buscarProdutos(termo: String):</text>
+  <text x="586" y="226" class="member">List&lt;Produto&gt;</text>
+
+  <!-- Adapter -->
+  <rect x="550" y="365" width="400" height="195" rx="3" fill="#f0f9ff" class="box"/>
+  <text x="750" y="392" class="stereotype">«Adapter»</text>
+  <text x="750" y="417" class="name">CatalogoAdapter</text>
+  <line x1="550" y1="432" x2="950" y2="432" class="divider"/>
+  <text x="566" y="458" class="member">- catalogoExterno: CatalogoExternoSimulado</text>
+  <line x1="550" y1="472" x2="950" y2="472" class="divider"/>
+  <text x="566" y="500" class="member">+ CatalogoAdapter(catalogoExterno:</text>
+  <text x="586" y="524" class="member">CatalogoExternoSimulado)</text>
+  <text x="566" y="548" class="member">+ buscarProdutos(termo: String): List&lt;Produto&gt;</text>
+
+  <!-- Adaptee -->
+  <rect x="1070" y="365" width="385" height="170" rx="3" fill="#fff7ed" class="box"/>
+  <text x="1262" y="392" class="stereotype">«Adaptee»</text>
+  <text x="1262" y="417" class="name">CatalogoExternoSimulado</text>
+  <line x1="1070" y1="432" x2="1455" y2="432" class="divider"/>
+  <text x="1086" y="465" class="member">+ consultarItens(termo: String):</text>
+  <text x="1106" y="489" class="member">List&lt;ItemExterno&gt;</text>
+
+  <!-- Domain objects -->
+  <rect x="50" y="605" width="350" height="145" rx="3" fill="#f8fafc" class="box"/>
+  <text x="225" y="636" class="name">Produto</text>
+  <line x1="50" y1="650" x2="400" y2="650" class="divider"/>
+  <text x="66" y="678" class="member">- id: String</text>
+  <text x="66" y="705" class="member">- nome: String</text>
+  <text x="66" y="732" class="member">- precoAtual: BigDecimal</text>
+
+  <rect x="1070" y="605" width="385" height="145" rx="3" fill="#f8fafc" class="box"/>
+  <text x="1262" y="636" class="name">ItemExterno</text>
+  <line x1="1070" y1="650" x2="1455" y2="650" class="divider"/>
+  <text x="1086" y="678" class="member">- codigo: String</text>
+  <text x="1086" y="705" class="member">- descricao: String</text>
+  <text x="1086" y="732" class="member">- valorEmCentavos: long</text>
+
+  <!-- UML relationships -->
+  <path d="M 400 185 H 548" class="edge" marker-end="url(#open-arrow)"/>
+  <text x="455" y="173" class="edge-label">usa</text>
+  <text x="528" y="207" class="edge-label">1</text>
+  <path d="M 750 365 V 267" class="dependency" marker-end="url(#realization)"/>
+  <text x="766" y="321" class="edge-label">realiza</text>
+  <path d="M 950 447 H 1068" class="edge" marker-end="url(#open-arrow)"/>
+  <text x="976" y="437" class="edge-label">envolve</text>
+  <text x="1050" y="468" class="edge-label">1</text>
+  <path d="M 1262 535 V 603" class="dependency" marker-end="url(#open-arrow)"/>
+  <text x="1277" y="573" class="edge-label">retorna</text>
+  <path d="M 550 530 L 401 640" class="dependency" marker-end="url(#open-arrow)"/>
+  <text x="410" y="553" class="edge-label">converte em</text>
+
+  <rect x="50" y="775" width="1405" height="38" rx="4" fill="#f1f5f9"/>
+  <text x="64" y="799" class="note">Linha contínua: associação navegável. Linha tracejada com triângulo: realização. Linha tracejada com seta: dependência.</text>
+</svg>

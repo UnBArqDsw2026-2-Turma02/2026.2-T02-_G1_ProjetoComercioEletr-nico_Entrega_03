@@ -60,7 +60,7 @@ A documentação será distribuída nas seis páginas da subequipe. Esta página
 | **GoF Estrutural** | Contexto, problema identificado, padrão escolhido, justificativa, metodologia, referências e análise crítica da solução |
 | **Modelagem** | Diagrama UML da solução, identificação dos participantes do padrão e rastreabilidade com os modelos da Entrega 02 |
 | **Implementação** | Código da solução, explicação das classes e responsabilidades e link para o repositório |
-| **Execução e Vídeo** | Instruções de execução, cenários demonstrados, resultados obtidos e vídeo do programa funcionando |
+| **Execução** | Instruções de execução, cenários demonstrados e resultados obtidos |
 | **IA Generativa e Lições Aprendidas** | Registro do uso de IA, avaliação crítica das sugestões e reflexões individuais de Diassis, Nayra e Uires |
 | **Gestão e Participações** | Apresentação da subequipe, organização do trabalho, reuniões, contribuições individuais, revisões e histórico de versões |
 
@@ -86,15 +86,19 @@ A matriz apresenta a participação prevista para esta entrega. Os três integra
 
 ### 6.2. Registro das contribuições realizadas
 
-Ao longo do desenvolvimento, serão registradas as contribuições efetivamente realizadas, identificando o responsável, a revisão e a evidência correspondente.
+O quadro abaixo registra somente contribuições identificáveis no histórico desta branch. Os commits de Diassis foram feitos com apoio de IA, sob sua condução; a revisão pelos demais integrantes ainda não foi registrada. Os commits de Diassis listados abaixo continuam locais e seus hashes poderão receber links do GitHub após a publicação da branch.
 
 | Etapa / Artefato | Contribuição realizada | Autor(a) | Revisor(a) | Evidência |
 | --- | --- | --- | --- | --- |
-| A preencher | A preencher após a realização da atividade | A preencher | A preencher após a revisão | A inserir |
+| Apresentação inicial | Criou a página de visão geral da Subequipe 02. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Não registrado. | Commit `f2bf25f`. |
+| Proposta inicial do GoF | Registrou a primeira proposta do Adapter para a busca. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Não registrado. | Commit `0806017`. |
+| Etapa 01 — problema e escolha | Fundamentou o cenário, a escolha do Adapter e revisou as premissas com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. | Commits `7f86916` e `1cf5043`. |
+| Etapa 02 — modelagem | Elaborou e revisou o UML do Adapter, incluindo rastreabilidade com a proposta, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. | Commits `042f7c9` e `d571794`. |
+| Etapa 03 — implementação e execução | Implementou o exemplo Java, documentou a execução e revisou as evidências com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. | Commits `ffd8d2c` e `6001b89`. |
 
-A participação conjunta não substitui o registro individual das contribuições. As evidências deverão permitir identificar o que cada integrante elaborou ou revisou.
+A participação de Nayra nas atividades desta entrega ainda precisa ser registrada com a respectiva evidência. A participação conjunta planejada não substitui o registro individual do que cada integrante elaborou ou revisou.
 
-As contribuições específicas também poderão ser registradas nas páginas dos respectivos artefatos, mantendo a coerência com esta visão geral.
+O [quadro detalhado de gestão e contribuições](/Base/Relatorios/subequipe02/gestao.md) reúne os commits e as pendências de revisão. As páginas técnicas também identificam autoria e revisão em seus históricos de versões.
 
 ## 7. Referências
 
@@ -106,4 +110,7 @@ As contribuições específicas também poderão ser registradas nas páginas do
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 15/10/2026 | Elaboração da versão inicial da página de Visão Geral e Gestão da Subequipe 02 para a Entrega 03, com apoio de IA generativa | Uires Carlos de Oliveira | Revisão pendente |
+| 1.0 | 15/10/2026 | Elaboração da versão inicial da página de Visão Geral e Gestão da Subequipe 02 para a Entrega 03, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Revisão pendente. |
+| 1.1 | 18/10/2026 | Registro das contribuições verificáveis, dos commits locais e das revisões pendentes. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Correção do link para o quadro detalhado de gestão na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.3 | 18/10/2026 | Atualização da descrição da página de execução. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
