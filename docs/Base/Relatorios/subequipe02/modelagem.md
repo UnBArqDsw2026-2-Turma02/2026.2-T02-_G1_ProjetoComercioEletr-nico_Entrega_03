@@ -50,8 +50,8 @@ O diagrama orientou a [implementação Java](implementacao.md) e os cenários da
 
 ## 6. Histórico de versões
 
-| Versão | Data | Descrição | Revisão |
-| --- | --- | --- | --- |
-| 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | Pendente de revisão pela subequipe. |
-| 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | Pendente de revisão pela subequipe. |
-| 1.2 | 18/10/2026 | Ligação entre modelo, código Java e execução da etapa 03. | Pendente de revisão pela subequipe. |
+| Versão | Data | Descrição | Autor(a) | Revisor(a) |
+| --- | --- | --- | --- | --- |
+| 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Ligação entre modelo, código Java e execução da etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |

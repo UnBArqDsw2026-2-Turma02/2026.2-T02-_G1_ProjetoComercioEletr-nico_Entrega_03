@@ -62,8 +62,8 @@ O vídeo reproduz visualmente saídas obtidas em execuções reais, mas não é 
 
 ## 5. Histórico de versões
 
-| Versão | Data | Descrição | Revisão |
-| --- | --- | --- | --- |
-| 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | Pendente de revisão pela subequipe. |
-| 1.1 | 18/10/2026 | Inclusão do vídeo curto gerado a partir da compilação e execução reais, sem narração. | Pendente de revisão pela subequipe. |
-| 1.2 | 18/10/2026 | Comandos de reprodução interrompem a sequência em caso de erro; limite da evidência em vídeo explicitado. | Pendente de revisão pela subequipe. |
+| Versão | Data | Descrição | Autor(a) | Revisor(a) |
+| --- | --- | --- | --- | --- |
+| 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.1 | 18/10/2026 | Inclusão do vídeo curto gerado a partir da compilação e execução reais, sem narração. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Comandos de reprodução interrompem a sequência em caso de erro; limite da evidência em vídeo explicitado. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
