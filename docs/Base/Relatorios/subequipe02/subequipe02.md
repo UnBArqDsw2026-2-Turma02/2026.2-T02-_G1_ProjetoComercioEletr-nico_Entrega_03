@@ -60,7 +60,7 @@ A documentação será distribuída nas seis páginas da subequipe. Esta página
 | **GoF Estrutural** | Contexto, problema identificado, padrão escolhido, justificativa, metodologia, referências e análise crítica da solução |
 | **Modelagem** | Diagrama UML da solução, identificação dos participantes do padrão e rastreabilidade com os modelos da Entrega 02 |
 | **Implementação** | Código da solução, explicação das classes e responsabilidades e link para o repositório |
-| **Execução e Vídeo** | Instruções de execução, cenários demonstrados, resultados obtidos e vídeo do programa funcionando |
+| **Execução** | Instruções de execução, cenários demonstrados e resultados obtidos |
 | **IA Generativa e Lições Aprendidas** | Registro do uso de IA, avaliação crítica das sugestões e reflexões individuais de Diassis, Nayra e Uires |
 | **Gestão e Participações** | Apresentação da subequipe, organização do trabalho, reuniões, contribuições individuais, revisões e histórico de versões |
 
@@ -113,3 +113,4 @@ O [quadro detalhado de gestão e contribuições](/Base/Relatorios/subequipe02/g
 | 1.0 | 15/10/2026 | Elaboração da versão inicial da página de Visão Geral e Gestão da Subequipe 02 para a Entrega 03, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Revisão pendente. |
 | 1.1 | 18/10/2026 | Registro das contribuições verificáveis, dos commits locais e das revisões pendentes. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
 | 1.2 | 18/10/2026 | Correção do link para o quadro detalhado de gestão na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.3 | 18/10/2026 | Atualização da descrição da página de execução. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |

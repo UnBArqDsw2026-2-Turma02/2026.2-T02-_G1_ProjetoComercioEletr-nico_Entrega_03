@@ -49,21 +49,10 @@ Nenhum produto encontrado.
 
 A consulta `"Bola"` confirma a tradução de `BOLA-01 / Bola de futebol / 12990` para `Produto` com `precoAtual = 129.90`. O segundo item confirma que a quantidade e a ordem são preservadas. A consulta `"sem-correspondencia"` confirma o retorno de uma lista vazia. A classe `AdapterCheck` também confere esses valores programaticamente e verifica a busca com letras em caixas diferentes.
 
-## 4. Vídeo de execução
-
-<video controls preload="metadata" width="800" aria-label="Vídeo da compilação, verificação e execução do Adapter da Subequipe 02">
-  <source src="assets/videos/subequipe02-adapter-execucao.webm" type="video/webm">
-  Seu navegador não oferece reprodução de vídeo WebM.
-</video>
-
-*Vídeo 1 — Reprodução visual automatizada de comandos reais executados neste checkout em 18/10/2026 (12 segundos, sem narração). Mostra a compilação, a verificação automatizada, os dois cenários de busca e os quatro participantes do padrão. A lista de arquivos fonte aparece abreviada no vídeo; os comandos completos estão na seção 2.*
-
-O vídeo reproduz visualmente saídas obtidas em execuções reais, mas não é uma captura contínua de um terminal. A equipe ainda precisa revisá-lo; uma gravação direta e narrada da execução pode oferecer uma evidência mais clara na apresentação à professora.
-
-## 5. Histórico de versões
+## 4. Histórico de versões
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
 | 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.1 | 18/10/2026 | Inclusão do vídeo curto gerado a partir da compilação e execução reais, sem narração. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.2 | 18/10/2026 | Comandos de reprodução interrompem a sequência em caso de erro; limite da evidência em vídeo explicitado. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.1 | 18/10/2026 | Revisão dos comandos de reprodução para interromper a sequência em caso de erro. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Atualização da página para manter apenas os comandos e resultados verificáveis. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |

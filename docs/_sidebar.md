@@ -21,7 +21,7 @@
         - [GoF Estrutural](/Base/Relatorios/subequipe02/gof_estrutural.md)
         - [Modelagem UML](/Base/Relatorios/subequipe02/modelagem.md)
         - [Implementação](/Base/Relatorios/subequipe02/implementacao.md)
-        - [Execução e Vídeo](/Base/Relatorios/subequipe02/execucao.md)
+        - [Execução](/Base/Relatorios/subequipe02/execucao.md)
         - [IA Generativa e Lições Aprendidas](/Base/Relatorios/subequipe02/ia_generativa.md)
         - [Gestão e Participações](/Base/Relatorios/subequipe02/gestao.md)
         
