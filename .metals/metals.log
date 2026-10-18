@@ -1,0 +1,36 @@
+2026.10.18 20:29:13 INFO  Started: Metals version 1.6.9 in folders 'C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03' for client Visual Studio Code 1.142.0.
+2026.10.18 20:29:13 INFO  Memory monitor started
+2026.10.18 20:29:15 WARN  Using H2 2.5.250 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.10.18 20:29:15 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:29:17 WARN  no build tool detected in workspace 'C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.10.18 20:29:17 WARN  Build server is not auto-connectable.
+2026.10.18 20:29:17 WARN  no build target for: C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java
+2026.10.18 20:29:19 INFO  time: code lens generation in 1.98s
+2026.10.18 20:29:30 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:29:44 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:29:46 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+out. 18, 2026 8:29:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.10.18 20:29:56 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+out. 18, 2026 8:29:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.10.18 20:29:56 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+out. 18, 2026 8:29:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.10.18 20:29:59 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:30:23 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:33:26 INFO  no build target found for c:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\src\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:33:26 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:33:27 WARN  no build target for: C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheckComplementar.java
+out. 18, 2026 8:33:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26
+2026.10.18 20:33:26 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:33:27 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:33:26 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheckComplementar.java. Using fallback presentation compiler.
+2026.10.18 20:33:28 WARN  no build target for: C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheck.java
+2026.10.18 20:33:28 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheck.java. Using fallback presentation compiler.
+out. 18, 2026 8:33:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 34
+2026.10.18 20:33:28 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheck.java. Using fallback presentation compiler.
+2026.10.18 20:33:28 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheck.java. Using fallback presentation compiler.
+2026.10.18 20:33:29 INFO  no build target found for C:\Users\User\Desktop\Entreg3\2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03\tests\subequipe02\AdapterCheck.java. Using fallback presentation compiler.
