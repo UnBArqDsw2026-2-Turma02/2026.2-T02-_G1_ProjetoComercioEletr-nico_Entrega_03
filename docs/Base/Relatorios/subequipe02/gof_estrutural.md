@@ -32,9 +32,9 @@ O **Adapter** é um padrão GoF estrutural adequado quando um cliente precisa us
 | **Adapter** | `CatalogoAdapter` | Implementar `CatalogoProdutos`, chamar `consultarItens(termo)` e converter cada registro retornado. |
 | **Adaptee** | `CatalogoExternoSimulado` | Disponibilizar `consultarItens(termo)` e itens no formato incompatível. |
 
-O `CatalogoProdutos` é um **contrato interno novo** da demonstração. Ele não substitui a `IBuscaProdutos` que o componente **Busca e Catálogo** expõe no diagrama de componentes da Entrega 02. Essa distinção aparece na [explicação do UML](modelagem.md), para que os dois níveis de interface não sejam confundidos.
+O `CatalogoProdutos` é um **contrato interno novo** da demonstração. Ele não substitui a `IBuscaProdutos` que o componente **Busca e Catálogo** expõe no diagrama de componentes da Entrega 02. Essa distinção aparece na [explicação do UML](/Base/Relatorios/subequipe02/modelagem.md), para que os dois níveis de interface não sejam confundidos.
 
-A [implementação foi feita em Java](implementacao.md), para tornar explícitos o contrato, as classes e os tipos representados no UML. As relações estão detalhadas na [página de Modelagem UML](modelagem.md). Para o valor monetário, a conversão de centavos para `BigDecimal` preserva duas casas decimais sem utilizar `float` ou `double` no cálculo.
+A [implementação foi feita em Java](/Base/Relatorios/subequipe02/implementacao.md), para tornar explícitos o contrato, as classes e os tipos representados no UML. As relações estão detalhadas na [página de Modelagem UML](/Base/Relatorios/subequipe02/modelagem.md). Para o valor monetário, a conversão de centavos para `BigDecimal` preserva duas casas decimais sem utilizar `float` ou `double` no cálculo.
 
 ## 4. Método de análise, justificativa e limites
 
@@ -49,7 +49,7 @@ O problema escolhido é a **incompatibilidade entre duas interfaces de catálogo
 
 O padrão tem custo: acrescenta uma interface e uma classe, além de exigir manutenção quando o formato adaptado mudar. Para um único catálogo que já oferecesse exatamente o contrato esperado, essa estrutura não se justificaria. Neste exercício, a diferença de operações e dados foi criada deliberadamente para demonstrar o caso de uso do Adapter; ela deve continuar identificada como **simulação acadêmica**, não como achado de engenharia reversa.
 
-O recorte desta demonstração termina na obtenção de resultados de busca. A validação de estoque representada na sequência da Entrega 02, assim como carrinho, checkout, pagamento e integração com serviços reais, fica fora deste exemplo do Adapter. A [execução documentada](execucao.md) usa o mesmo cenário do problema, do modelo UML e do código Java.
+O recorte desta demonstração termina na obtenção de resultados de busca. A validação de estoque representada na sequência da Entrega 02, assim como carrinho, checkout, pagamento e integração com serviços reais, fica fora deste exemplo do Adapter. A [execução documentada](/Base/Relatorios/subequipe02/execucao.md) usa o mesmo cenário do problema, do modelo UML e do código Java.
 
 ## 5. Rastreabilidade com as entregas anteriores
 
@@ -78,3 +78,4 @@ O recorte desta demonstração termina na obtenção de resultados de busca. A v
 | 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
 | 1.4 | 18/10/2026 | Atualização da referência à explicação já publicada da modelagem. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
 | 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.6 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |

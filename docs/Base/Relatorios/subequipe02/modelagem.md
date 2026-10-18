@@ -2,7 +2,7 @@
 
 ## 1. Objetivo e recorte
 
-Este modelo detalha a [proposta de Adapter da Subequipe 02](gof_estrutural.md): uma busca de produtos usa um contrato interno, enquanto um catálogo externo **simulado** oferece outra operação e outro formato de dados. A incompatibilidade é uma hipótese didática, não uma interface observada na loja estudada. O diagrama representa a variante **Adapter de objeto**, na qual `CatalogoAdapter` recebe e envolve uma instância de `CatalogoExternoSimulado`.
+Este modelo detalha a [proposta de Adapter da Subequipe 02](/Base/Relatorios/subequipe02/gof_estrutural.md): uma busca de produtos usa um contrato interno, enquanto um catálogo externo **simulado** oferece outra operação e outro formato de dados. A incompatibilidade é uma hipótese didática, não uma interface observada na loja estudada. O diagrama representa a variante **Adapter de objeto**, na qual `CatalogoAdapter` recebe e envolve uma instância de `CatalogoExternoSimulado`.
 
 O modelo retoma a busca e o conceito de `Produto` da Entrega 02. `CatalogoProdutos` é uma interface **nova e interna** deste exemplo; não corresponde à `IBuscaProdutos` exposta pelo componente **Busca e Catálogo** no diagrama de componentes anterior.
 
@@ -46,7 +46,7 @@ As setas tracejadas para `ItemExterno` e `Produto` indicam dependências de reto
 
 O recorte funcional vem do [fluxo de busca da Entrega 01](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletronico_Entrega_01/blob/main/docs/Base/subequipe2/foco2_SubEquipe_02.md). Os nomes de `Produto` e seus três atributos vêm do [modelo estático da Entrega 02](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega02/blob/main/docs/modulo-2/subequipe-02/foco-01.md); a consulta conceitual ao Catálogo vem do [modelo dinâmico da Entrega 02](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega02/blob/main/docs/modulo-2/subequipe-02/foco-02.md). As classes `CatalogoProdutos`, `CatalogoAdapter`, `CatalogoExternoSimulado` e `ItemExterno` são propostas desta entrega para demonstrar o [padrão Adapter descrito pelos autores do GoF](https://www.informit.com/articles/article.aspx?p=1398600).
 
-O diagrama orientou a [implementação Java](implementacao.md) e os cenários da [execução documentada](execucao.md). A revisão da modelagem pelos demais integrantes e o registro de suas contribuições individuais permanecem pendentes.
+O diagrama orientou a [implementação Java](/Base/Relatorios/subequipe02/implementacao.md) e os cenários da [execução documentada](/Base/Relatorios/subequipe02/execucao.md). A revisão da modelagem pelos demais integrantes e o registro de suas contribuições individuais permanecem pendentes.
 
 ## 6. Histórico de versões
 
@@ -55,3 +55,4 @@ O diagrama orientou a [implementação Java](implementacao.md) e os cenários da
 | 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
 | 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
 | 1.2 | 18/10/2026 | Ligação entre modelo, código Java e execução da etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.3 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |

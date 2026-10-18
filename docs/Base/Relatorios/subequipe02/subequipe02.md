@@ -98,7 +98,7 @@ O quadro abaixo registra somente contribuições identificáveis no histórico d
 
 A participação de Nayra nas atividades desta entrega ainda precisa ser registrada com a respectiva evidência. A participação conjunta planejada não substitui o registro individual do que cada integrante elaborou ou revisou.
 
-O [quadro detalhado de gestão e contribuições](gestao.md) reúne os commits e as pendências de revisão. As páginas técnicas também identificam autoria e revisão em seus históricos de versões.
+O [quadro detalhado de gestão e contribuições](/Base/Relatorios/subequipe02/gestao.md) reúne os commits e as pendências de revisão. As páginas técnicas também identificam autoria e revisão em seus históricos de versões.
 
 ## 7. Referências
 
@@ -112,3 +112,4 @@ O [quadro detalhado de gestão e contribuições](gestao.md) reúne os commits e
 | --- | --- | --- | --- | --- |
 | 1.0 | 15/10/2026 | Elaboração da versão inicial da página de Visão Geral e Gestão da Subequipe 02 para a Entrega 03, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Revisão pendente. |
 | 1.1 | 18/10/2026 | Registro das contribuições verificáveis, dos commits locais e das revisões pendentes. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Correção do link para o quadro detalhado de gestão na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |

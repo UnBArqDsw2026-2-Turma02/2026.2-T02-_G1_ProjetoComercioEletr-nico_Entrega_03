@@ -2,7 +2,7 @@
 
 ## 1. Código e organização
 
-A implementação do [modelo UML](modelagem.md) está em `src/subequipe02`, no pacote Java `subequipe02`. Ela usa somente a biblioteca padrão do Java 17 ou superior. O catálogo é **simulado** e contém dados fictícios; não consulta a loja estudada nem qualquer serviço externo.
+A implementação do [modelo UML](/Base/Relatorios/subequipe02/modelagem.md) está em `src/subequipe02`, no pacote Java `subequipe02`. Ela usa somente a biblioteca padrão do Java 17 ou superior. O catálogo é **simulado** e contém dados fictícios; não consulta a loja estudada nem qualquer serviço externo.
 
 [Código da Subequipe 02 na branch de trabalho](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/tree/subequipe02/src/subequipe02) — o link passará a mostrar estes arquivos quando os commits locais forem publicados no fluxo de pull request da subequipe. Até lá, os arquivos estão disponíveis no checkout local.
 
@@ -89,7 +89,7 @@ Os construtores e métodos de acesso de `Produto` e `ItemExterno` foram omitidos
 
 ## 4. Verificação e limites
 
-`tests/subequipe02/AdapterCheck.java` exercita o fluxo completo `BuscaProdutos → CatalogoProdutos → CatalogoAdapter → CatalogoExternoSimulado`, conferindo os campos convertidos, os valores monetários, a ordem dos resultados, a busca sem correspondência e a busca sem diferenciar maiúsculas e minúsculas. As [instruções e a saída observada](execucao.md) estão na página de execução.
+`tests/subequipe02/AdapterCheck.java` exercita o fluxo completo `BuscaProdutos → CatalogoProdutos → CatalogoAdapter → CatalogoExternoSimulado`, conferindo os campos convertidos, os valores monetários, a ordem dos resultados, a busca sem correspondência e a busca sem diferenciar maiúsculas e minúsculas. As [instruções e a saída observada](/Base/Relatorios/subequipe02/execucao.md) estão na página de execução.
 
 Esta implementação não inclui estoque, carrinho, checkout, APIs externas ou uma interface gráfica. A revisão do código pelos demais integrantes e o registro de suas contribuições individuais permanecem pendentes.
 
@@ -99,3 +99,4 @@ Esta implementação não inclui estoque, carrinho, checkout, APIs externas ou u
 | --- | --- | --- | --- | --- |
 | 1.0 | 18/10/2026 | Implementação Java do Adapter e documentação da correspondência entre modelo e código, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
 | 1.1 | 18/10/2026 | Revisão dos trechos de código dos quatro participantes do padrão e da ligação entre eles. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
