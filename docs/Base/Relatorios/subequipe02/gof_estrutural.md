@@ -34,7 +34,7 @@ O **Adapter** é um padrão GoF estrutural adequado quando um cliente precisa us
 
 O `CatalogoProdutos` é um **contrato interno novo** da demonstração. Ele não substitui a `IBuscaProdutos` que o componente **Busca e Catálogo** expõe no diagrama de componentes da Entrega 02. Essa distinção deverá aparecer na explicação do UML, para que os dois níveis de interface não sejam confundidos.
 
-A implementação planejada será em **Java**, para tornar explícitos o contrato, as classes e os tipos representados no UML. As relações serão detalhadas na página de Modelagem UML antes de serem implementadas. Para o valor monetário, a conversão de centavos para `BigDecimal` deverá preservar duas casas decimais sem utilizar `float` ou `double` no cálculo.
+A implementação planejada será em **Java**, para tornar explícitos o contrato, as classes e os tipos representados no UML. As relações estão detalhadas na [página de Modelagem UML](modelagem.md), antes de serem implementadas. Para o valor monetário, a conversão de centavos para `BigDecimal` deverá preservar duas casas decimais sem utilizar `float` ou `double` no cálculo.
 
 ## 4. Método de análise, justificativa e limites
 
@@ -75,3 +75,4 @@ O recorte desta demonstração termina na obtenção de resultados de busca. A v
 | 1.0 | 14/10/2026 | [Proposta inicial do Adapter](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/0806017026430903b4f95213d20bd0c1eff8e1c6) para a busca de produtos. | Não registrada. |
 | 1.1 | 18/10/2026 | Revisão do problema e da justificativa do Adapter, com rastreabilidade às Entregas 01 e 02 e definição de Java para a implementação. Texto elaborado com apoio de IA. | Pendente de revisão pela subequipe. |
 | 1.2 | 18/10/2026 | Revisão técnica das premissas, distinção entre interfaces, representação monetária e método de análise, com apoio de IA. | Pendente de revisão pela subequipe. |
+| 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | Pendente de revisão pela subequipe. |
