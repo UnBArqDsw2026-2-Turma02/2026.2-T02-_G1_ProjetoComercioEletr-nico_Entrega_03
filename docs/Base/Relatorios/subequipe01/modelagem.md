@@ -77,7 +77,7 @@ O diagrama UML a seguir representa a estrutura do padrão Factory Method aplicad
 
 ![Diagrama UML do Factory Method](../subequipe01/img%20diagramas/Diagrama_FactoryMethod.png)
 
-*Figura 1 — Diagrama de classes UML do padrão Factory Method. Fonte: Elaborado por Samuel Felipe, Subequipe 01 (2026).*
+*Figura 1 — Diagrama de classes UML do padrão Factory Method. Fonte: Elaborado por Samuel Felipe, Dylan Cavalcante, Mariana Ribeiro, Subequipe 01 (2026).*
 
 ### 5.1. Descrição do Modelo
 
@@ -104,7 +104,7 @@ O diagrama UML a seguir representa a estrutura do padrão Singleton aplicada ao 
 
 ![Diagrama UML do Singleton](../subequipe01/img%20diagramas/Diagrama_Singleton.png)
 
-*Figura 2 — Diagrama de classes UML do padrão Singleton. Fonte: Elaborado por Samuel Felipe, Subequipe 01 (2026).*
+*Figura 2 — Diagrama de classes UML do padrão Singleton. Fonte: Elaborado por Samuel Felipe, Dylan Cavalcante, Mariana Ribeiro, Subequipe 01 (2026).*
 
 ### 6.1. Descrição do Modelo
 
@@ -169,8 +169,8 @@ SUBEQUIPE 01. *Documentação de Implementação* (`implementacao.md`).
 
 | Versão | Data | Descrição | Autor | Revisor |
 | :---: | :---: | :--- | :--- |:----|
-| 1.0 | 17/10/2026 | Estruturação inicial da página de modelagem dos padrões Factory Method e Singleton. | Samuel Felipe ||
-| 1.2 | 17/10/2026 | Inclusão da visão geral e da metodologia. | Samuel Felipe ||
-| 1.3 | 17/10/2026 | Inclusão dos diagramas UML e das respectivas descrições. | Samuel Felipe ||
-| 1.4 | 18/10/2026 | Inclusão dos objetivos geral e específicos, detalhamento das responsabilidades dos padrões, integração entre os modelos e conclusão. | Samuel Felipe ||
-| 1.5 | 18/10/2026 | Refatoração da página de acordo com os padrões de projeto. | [Dylan Cavalcante](https://github.com/dylancavalcante) ||
+| 1.0 | 17/10/2026 | Estruturação inicial da página de modelagem dos padrões Factory Method e Singleton. | [Samuel Felipe]((https://github.com/TerminaKng05)) | [Dylan Cavalcante](https://github.com/dylancavalcante) |
+| 1.2 | 17/10/2026 | Inclusão da visão geral e da metodologia. | [Samuel Felipe](https://github.com/TerminaKng05) | [Dylan Cavalcante](https://github.com/dylancavalcante) |
+| 1.3 | 17/10/2026 | Inclusão dos diagramas UML e das respectivas descrições. | [Samuel Felipe](https://github.com/TerminaKng05) | [Mariana Ribeiro](https://github.com/marianagonzaga0) |
+| 1.4 | 18/10/2026 | Inclusão dos objetivos geral e específicos, detalhamento das responsabilidades dos padrões, integração entre os modelos e conclusão. | [Samuel Felipe](https://github.com/TerminaKng05) | [Mariana Ribeiro](https://github.com/marianagonzaga0) |
+| 1.5 | 18/10/2026 | Refatoração da página de acordo com os padrões de projeto. | [Dylan Cavalcante](https://github.com/dylancavalcante) | [Samuel Felipe](https://github.com/TerminaKng05) |
