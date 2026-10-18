@@ -8,7 +8,7 @@ As entregas anteriores foram construídas a partir de comportamento observável.
 
 ## 2. Contexto e problema de projeto
 
-Considere uma aplicação de busca que espera um catálogo com a operação `buscarProdutos(termo)` e recebe uma representação simplificada de `Produto` com `id`, `nome` e `precoAtual`. Para o exercício, a equipe criará um **catálogo externo simulado** que oferece `consultarItens(termo)` e devolve registros com `codigo`, `descricao` e `valorEmCentavos`. Na simulação, esse contrato representa um fornecedor preexistente: a aplicação cliente não pode alterar sua operação nem o formato dos registros. Essa restrição faz parte da hipótese didática, não de uma descoberta sobre a loja analisada.
+Considere uma aplicação de busca que espera um catálogo com a operação `buscarProdutos(termo)` e recebe uma representação simplificada de `Produto` com `id`, `nome` e `precoAtual`. Para o exercício, foi criado um **catálogo externo simulado** que oferece `consultarItens(termo)` e devolve registros com `codigo`, `descricao` e `valorEmCentavos`. Na simulação, esse contrato representa um fornecedor preexistente: a aplicação cliente não pode alterar sua operação nem o formato dos registros. Essa restrição faz parte da hipótese didática, não de uma descoberta sobre a loja analisada.
 
 | Informação | Formato do catálogo simulado | Formato esperado pela busca |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ Sem uma camada de adaptação, `BuscaProdutos` teria de chamar uma operação qu
 
 ## 3. Escolha e solução proposta
 
-O **Adapter** é um padrão GoF estrutural adequado quando um cliente precisa usar um objeto cuja interface é incompatível com a interface que ele espera, conforme descrito pelos [autores do padrão](https://www.informit.com/articles/article.aspx?p=1398600). Nesta proposta, `CatalogoAdapter` implementará o contrato `CatalogoProdutos`, receberá uma instância de `CatalogoExternoSimulado` e concentrará a tradução da chamada e dos dados retornados. Trata-se da variante **Adapter de objeto**, pois o adaptador envolve uma instância do catálogo simulado.
+O **Adapter** é um padrão GoF estrutural adequado quando um cliente precisa usar um objeto cuja interface é incompatível com a interface que ele espera, conforme descrito pelos [autores do padrão](https://www.informit.com/articles/article.aspx?p=1398600). Nesta solução, `CatalogoAdapter` implementa o contrato `CatalogoProdutos`, recebe uma instância de `CatalogoExternoSimulado` e concentra a tradução da chamada e dos dados retornados. Trata-se da variante **Adapter de objeto**, pois o adaptador envolve uma instância do catálogo simulado.
 
 | Papel no padrão | Elemento proposto | Responsabilidade |
 | --- | --- | --- |
@@ -34,7 +34,7 @@ O **Adapter** é um padrão GoF estrutural adequado quando um cliente precisa us
 
 O `CatalogoProdutos` é um **contrato interno novo** da demonstração. Ele não substitui a `IBuscaProdutos` que o componente **Busca e Catálogo** expõe no diagrama de componentes da Entrega 02. Essa distinção aparece na [explicação do UML](modelagem.md), para que os dois níveis de interface não sejam confundidos.
 
-A implementação planejada será em **Java**, para tornar explícitos o contrato, as classes e os tipos representados no UML. As relações estão detalhadas na [página de Modelagem UML](modelagem.md), antes de serem implementadas. Para o valor monetário, a conversão de centavos para `BigDecimal` deverá preservar duas casas decimais sem utilizar `float` ou `double` no cálculo.
+A [implementação foi feita em Java](implementacao.md), para tornar explícitos o contrato, as classes e os tipos representados no UML. As relações estão detalhadas na [página de Modelagem UML](modelagem.md). Para o valor monetário, a conversão de centavos para `BigDecimal` preserva duas casas decimais sem utilizar `float` ou `double` no cálculo.
 
 ## 4. Método de análise, justificativa e limites
 
@@ -49,7 +49,7 @@ O problema escolhido é a **incompatibilidade entre duas interfaces de catálogo
 
 O padrão tem custo: acrescenta uma interface e uma classe, além de exigir manutenção quando o formato adaptado mudar. Para um único catálogo que já oferecesse exatamente o contrato esperado, essa estrutura não se justificaria. Neste exercício, a diferença de operações e dados foi criada deliberadamente para demonstrar o caso de uso do Adapter; ela deve continuar identificada como **simulação acadêmica**, não como achado de engenharia reversa.
 
-O recorte desta demonstração termina na obtenção de resultados de busca. A validação de estoque representada na sequência da Entrega 02, assim como carrinho, checkout, pagamento e integração com serviços reais, fica fora deste exemplo do Adapter. A documentação deverá comparar o problema, o modelo UML e o comportamento do código Java usando o mesmo cenário.
+O recorte desta demonstração termina na obtenção de resultados de busca. A validação de estoque representada na sequência da Entrega 02, assim como carrinho, checkout, pagamento e integração com serviços reais, fica fora deste exemplo do Adapter. A [execução documentada](execucao.md) usa o mesmo cenário do problema, do modelo UML e do código Java.
 
 ## 5. Rastreabilidade com as entregas anteriores
 
@@ -77,3 +77,4 @@ O recorte desta demonstração termina na obtenção de resultados de busca. A v
 | 1.2 | 18/10/2026 | Revisão técnica das premissas, distinção entre interfaces, representação monetária e método de análise, com apoio de IA. | Pendente de revisão pela subequipe. |
 | 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | Pendente de revisão pela subequipe. |
 | 1.4 | 18/10/2026 | Atualização da referência à explicação já publicada da modelagem. | Pendente de revisão pela subequipe. |
+| 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | Pendente de revisão pela subequipe. |

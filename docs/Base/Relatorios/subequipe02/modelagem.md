@@ -46,7 +46,7 @@ As setas tracejadas para `ItemExterno` e `Produto` indicam dependências de reto
 
 O recorte funcional vem do [fluxo de busca da Entrega 01](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletronico_Entrega_01/blob/main/docs/Base/subequipe2/foco2_SubEquipe_02.md). Os nomes de `Produto` e seus três atributos vêm do [modelo estático da Entrega 02](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega02/blob/main/docs/modulo-2/subequipe-02/foco-01.md); a consulta conceitual ao Catálogo vem do [modelo dinâmico da Entrega 02](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega02/blob/main/docs/modulo-2/subequipe-02/foco-02.md). As classes `CatalogoProdutos`, `CatalogoAdapter`, `CatalogoExternoSimulado` e `ItemExterno` são propostas desta entrega para demonstrar o [padrão Adapter descrito pelos autores do GoF](https://www.informit.com/articles/article.aspx?p=1398600).
 
-O diagrama é uma especificação para a próxima etapa. Ainda não há implementação Java ou execução comprovando o comportamento. A revisão da modelagem pelos demais integrantes e o registro de suas contribuições individuais permanecem pendentes.
+O diagrama orientou a [implementação Java](implementacao.md) e os cenários da [execução documentada](execucao.md). A revisão da modelagem pelos demais integrantes e o registro de suas contribuições individuais permanecem pendentes.
 
 ## 6. Histórico de versões
 
@@ -54,3 +54,4 @@ O diagrama é uma especificação para a próxima etapa. Ainda não há implemen
 | --- | --- | --- | --- |
 | 1.0 | 18/10/2026 | Modelagem UML do Adapter de objeto e definição do cenário verificável para a implementação, com apoio de IA. | Pendente de revisão pela subequipe. |
 | 1.1 | 18/10/2026 | Revisão de construtor, multiplicidades, notação de visibilidade, distinção entre associação e composição UML e critérios do cenário, com apoio de IA. | Pendente de revisão pela subequipe. |
+| 1.2 | 18/10/2026 | Ligação entre modelo, código Java e execução da etapa 03. | Pendente de revisão pela subequipe. |
