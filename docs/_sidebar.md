@@ -5,10 +5,12 @@
 
 - **Base**
   - [Apresentação do Módulo - Padrões de Projeto](/Base/1.PadroesDeProjeto.md)
+  - [Documentos de Gestão](/Base/1.2.ParticipacoesPadroesDeProjeto.md)
+  - [Relatorios e Estudos Complementares](/Base/1.3.IniciativasExtras.md)
 
-  - Relatórios
+  * **Relatórios**
 
-      - [Sub-Equipe 01](/Base/Relatorios/subequipe01/subequipe01.md)
+      - **Sub-Equipe 01**
         - [Apresentação da equipe](/Base/Relatorios/subequipe01/subequipe01.md)
         - [GoF Criacionais](/Base/Relatorios/subequipe01/gof_criacionais.md)
         - [Modelagem](/Base/Relatorios/subequipe01/modelagem.md)
@@ -30,7 +32,14 @@
         - [Apresentação da Equipe](/Base/Relatorios/1.1.3.subequipe-03/1.1.3.SubEquipe_03.md)
         - [Modelagem ](/Base/Relatorios/1.1.3.subequipe-03/padroesprojetoEquipe03.md)
         - [Implementação](/Base/Relatorios/1.1.3.subequipe-03/implementacaoEquipe03.md)
+<<<<<<< HEAD
         - [IA Generativa e Lições Aprendidas](/docs/Base/Relatorios/1.1.3.subequipe-03/iaEquipe03.md)
         - [Gestão e Participações](/Base/Relatorios/1.1.3.subequipe-03/gestaoEquipe03.md)
   - [Documentos de Gestão](/Base/1.2.ParticipacoesPadroesDeProjeto.md)
   - [Relatorios e Estudos Complementares](/Base/1.3.IniciativasExtras.md)
+=======
+        - [IA Generativa](/docs/Base/Relatorios/1.1.3.subequipe-03/iaEquipe03.md)
+        - [Gestão e Desenvolvimento Colaborativo](/Base/Relatorios/1.1.3.subequipe-03/gestaoEquipe03.md)
+
+
+>>>>>>> 2862a8c85ad66ca6e5898b0149e2a399384b8e28
