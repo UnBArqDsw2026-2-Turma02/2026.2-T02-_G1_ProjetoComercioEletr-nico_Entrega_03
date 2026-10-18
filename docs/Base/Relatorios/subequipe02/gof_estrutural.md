@@ -1,40 +1,66 @@
 # GoF Estrutural — Adapter
 
-## 1. Introdução
+## 1. Escopo e origem do problema
 
-Os padrões de projeto estruturais apresentam soluções para organizar classes e objetos, estabelecendo relações entre eles para compor estruturas maiores. Neste trabalho, a Subequipe 02 propõe a aplicação do padrão Adapter no contexto da busca de produtos do projeto G1_ProjetoComercioEletronico, inspirado nas funcionalidades observadas no site da Decathlon.
+A Subequipe 02 trabalha com o **Fluxo de Navegação B: Busca de Produtos, Carrinho e Compra** do projeto G1_ProjetoComercioEletronico. Na Entrega 01, a engenharia reversa descreveu a pesquisa, a visualização de produtos e a continuação da compra. Na Entrega 02, o diagrama de classes incluiu `Produto` com os atributos `id`, `nome` e `precoAtual`; o diagrama de componentes apresentou **Busca e Catálogo**; e o diagrama de sequência representou a consulta ao Catálogo durante a pesquisa. Esses artefatos fundamentam o domínio e o recorte de **busca de produtos** desta proposta.
 
-## 2. Contexto e problema
+As entregas anteriores foram construídas a partir de comportamento observável. Elas **não identificaram a interface de um catálogo externo ou legado**, nem tiveram acesso ao código-fonte ou às APIs internas da loja estudada. A incompatibilidade de interfaces descrita a seguir é um **cenário hipotético, simulado pela subequipe para demonstrar o padrão Adapter**. Não se afirma que ela exista na arquitetura real da fonte de inspiração.
 
-Uma busca de produtos pode precisar consultar catálogos que possuem interfaces e formatos de dados diferentes dos utilizados pela aplicação.
+## 2. Contexto e problema de projeto
 
-Para demonstrar esse problema, propomos um catálogo simulado que oferece a operação `consultarItens(termo)` e retorna produtos com os campos `descricao` e `valorEmCentavos`. Entretanto, a busca da aplicação espera a operação `buscarProdutos(termo)` e produtos com os campos `nome` e `preco`.
+Considere uma aplicação de busca que espera um catálogo com a operação `buscarProdutos(termo)` e recebe uma representação simplificada de `Produto` com `id`, `nome` e `precoAtual`. Para o exercício, a equipe criará um **catálogo externo simulado** que oferece `consultarItens(termo)` e devolve registros com `codigo`, `descricao` e `valorEmCentavos`.
 
-Essa incompatibilidade impede que o catálogo seja utilizado diretamente pela busca.
-
-## 3. Solução proposta
-
-O padrão Adapter permite converter a interface de uma classe em outra esperada pelo cliente.
-
-Na proposta, a classe `CatalogoAdapter` será responsável por traduzir a chamada da busca para a operação disponível no catálogo e adaptar os dados retornados, incluindo a conversão do valor em centavos para reais.
-
-O catálogo será simulado para fins acadêmicos, sem integração com uma API real da Decathlon.
-
-## 4. Participantes do padrão
-
-| Participante | Elemento proposto | Responsabilidade |
+| Informação | Formato do catálogo simulado | Formato esperado pela busca |
 | --- | --- | --- |
-| Client | BuscaProdutos | Solicitar produtos pela interface esperada. |
-| Target | CatalogoProdutos | Definir a operação buscarProdutos(termo). |
-| Adapter | CatalogoAdapter | Adaptar a chamada e os dados do catálogo. |
-| Adaptee | CatalogoLegado | Disponibilizar consultarItens(termo), com formato incompatível. |
+| Operação | `consultarItens(termo)` | `buscarProdutos(termo)` |
+| Identificador | `codigo` | `id` |
+| Nome | `descricao` | `nome` |
+| Valor | `valorEmCentavos` (inteiro) | `precoAtual` (valor decimal) |
 
-## 5. Justificativa da escolha
+Por exemplo, um item com `codigo = "BOLA-01"`, `descricao = "Bola de futebol"` e `valorEmCentavos = 12990` deve ser apresentado à busca com `id = "BOLA-01"`, `nome = "Bola de futebol"` e `precoAtual = 129,90`. Essa representação usa somente os atributos necessários à demonstração; não pretende reproduzir todas as propriedades e associações do `Produto` modelado na Entrega 02.
 
-O Adapter foi proposto porque o problema envolve a integração de interfaces incompatíveis. Sua aplicação permite concentrar a tradução no adaptador, evitando que a busca precise conhecer os detalhes do catálogo.
+Sem uma camada de adaptação, `BuscaProdutos` teria de chamar uma operação que não pertence ao contrato esperado e conhecer os campos específicos do catálogo simulado. Essa tradução dentro da própria busca aumentaria seu acoplamento ao fornecedor e misturaria a regra de pesquisa com detalhes de integração.
 
-Como limitação, a solução acrescenta uma classe à estrutura e exige manutenção caso a interface do catálogo seja alterada. Portanto, sua utilização se justifica pela incompatibilidade apresentada no exemplo.
+## 3. Escolha e solução proposta
+
+O **Adapter** é um padrão GoF estrutural adequado quando um cliente precisa usar um objeto cuja interface é incompatível com a interface que ele espera. Nesta proposta, `CatalogoAdapter` implementará o contrato `CatalogoProdutos`, receberá uma instância de `CatalogoExternoSimulado` e concentrará a tradução da chamada e dos dados retornados.
+
+| Papel no padrão | Elemento proposto | Responsabilidade |
+| --- | --- | --- |
+| **Client** | `BuscaProdutos` | Pesquisar produtos por meio do contrato esperado, sem conhecer o catálogo simulado. |
+| **Target** | `CatalogoProdutos` | Definir `buscarProdutos(termo)` como operação disponível para a busca. |
+| **Adapter** | `CatalogoAdapter` | Implementar `CatalogoProdutos`, chamar `consultarItens(termo)` e converter cada registro retornado. |
+| **Adaptee** | `CatalogoExternoSimulado` | Disponibilizar `consultarItens(termo)` e itens no formato incompatível. |
+
+A implementação planejada será em **Java**. O contrato e as relações entre essas classes serão detalhados na página de Modelagem UML antes de serem implementados. Para o valor monetário, a conversão de centavos para `BigDecimal` deverá preservar duas casas decimais sem utilizar `float` ou `double` no cálculo.
+
+## 4. Justificativa e limites da decisão
+
+O problema escolhido é a **incompatibilidade entre duas interfaces de catálogo**: nomes de operações diferentes e estruturas de dados diferentes. O Adapter mantém essa conversão em um único componente e permite que `BuscaProdutos` dependa do contrato `CatalogoProdutos`. Se o formato do catálogo simulado mudar, o ponto principal de ajuste será o adaptador. A solução também torna possível substituir o catálogo por outra implementação do mesmo contrato sem reescrever a busca.
+
+O padrão tem custo: acrescenta uma interface e uma classe, além de exigir manutenção quando o formato adaptado mudar. Para um único catálogo que já oferecesse exatamente o contrato esperado, essa estrutura não se justificaria. Neste exercício, a diferença de operações e dados foi criada deliberadamente para demonstrar o caso de uso do Adapter; ela deve continuar identificada como **simulação acadêmica**, não como achado de engenharia reversa.
+
+O recorte desta subequipe termina na obtenção de resultados de busca. Carrinho, checkout, pagamento e integração com serviços reais não fazem parte da demonstração do Adapter. A documentação deverá comparar o problema, o UML e o comportamento do código Java usando o mesmo cenário.
+
+## 5. Rastreabilidade com as entregas anteriores
+
+| Origem | Evidência aproveitada | Uso nesta entrega |
+| --- | --- | --- |
+| Entrega 01 — Engenharia Reversa e BPMN | Pesquisa, seleção de produtos e continuação do fluxo de compra. | Delimita a funcionalidade de busca dentro do Fluxo B. |
+| Entrega 02 — Modelo Estático | `Produto` com `id`, `nome` e `precoAtual`. | Orienta os nomes dos dados entregues à busca; a demonstração usa um subconjunto do modelo. |
+| Entrega 02 — Modelos de Componentes e Sequência | **Busca e Catálogo** e a consulta ao Catálogo durante a pesquisa. | Situa o cliente e o serviço conceitual ao qual a adaptação será aplicada. |
+| Entrega 03 — Proposta da Subequipe 02 | Integração simulada por meio de Adapter. | Introduz a interface incompatível como hipótese de projeto, com seus limites declarados. |
 
 ## 6. Referências
 
-GAMMA, Erich et al. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1994.
+- GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. **Design Patterns: Elements of Reusable Object-Oriented Software**. Addison-Wesley, 1994.
+- SUBEQUIPE 02. [Entrega 01 — Engenharia Reversa e BPMN](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletronico_Entrega_01/blob/main/docs/Base/subequipe2/foco2_SubEquipe_02.md).
+- SUBEQUIPE 02. [Entrega 02 — Modelo Estático](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega02/blob/main/docs/modulo-2/subequipe-02/foco-01.md).
+- SUBEQUIPE 02. [Entrega 02 — Modelos Dinâmicos](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega02/blob/main/docs/modulo-2/subequipe-02/foco-02.md).
+
+## 7. Histórico de versões
+
+| Versão | Data | Descrição | Revisão |
+| --- | --- | --- | --- |
+| 1.0 | 14/10/2026 | Proposta inicial do Adapter para a busca de produtos, registrada nos commits anteriores da subequipe. | Não registrada. |
+| 1.1 | 18/10/2026 | Revisão do problema e da justificativa do Adapter, com rastreabilidade às Entregas 01 e 02 e definição de Java para a implementação. Texto elaborado com apoio de IA. | Pendente de revisão pela subequipe. |
