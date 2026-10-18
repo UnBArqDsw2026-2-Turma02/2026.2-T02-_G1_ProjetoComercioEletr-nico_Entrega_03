@@ -13,17 +13,17 @@ A tabela a seguir detalha a divisão de responsabilidades, a revisão em pares (
 
 | Etapa / Tópico do Relatório | Autor(a) Principal | Revisor(a) em Par | Evidência / Commit |
 | :--- | :--- | :--- | :---: |
-| 1. Introdução | A definir | A definir | A definir |
-| 2. Objetivos (geral e específicos) | A definir | A definir | A definir |
-| 3. Organização da Implementação | A definir | A definir | A definir |
-| 4. Implementação do Factory Method: estrutura, código e segurança | A definir | A definir | A definir |
-| 5. Implementação do Singleton: estrutura, código e gerenciamento de sessões | A definir | A definir | A definir |
-| 6. Integração entre os Padrões | A definir | A definir | A definir |
-| 7. Testes e Resultados Observados | A definir | A definir | A definir |
-| 8. Instruções de Execução | A definir | A definir | A definir |
-| 9. Identificação e Acesso aos Códigos-Fonte | A definir | A definir | A definir |
-| 10. Limitações e Considerações de Segurança | A definir | A definir | A definir |
-| 11. Histórico de Versão e Revisão Documental | A definir | A definir | A definir |
+| 1. Introdução | [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 2. Objetivos (geral e específicos) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 3. Organização da Implementação | [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 4. Implementação do Factory Method: estrutura, código e segurança | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 5. Implementação do Singleton: estrutura, código e gerenciamento de sessões | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Dylan Cavalcante](https://github.com/dylancavalcante) | A definir |
+| 6. Integração entre os Padrões | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 7. Testes e Resultados Observados | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 8. Instruções de Execução | [Samuel Felipe](https://github.com/TerminaKng05) | [Dylan Cavalcante](https://github.com/dylancavalcante) | A definir |
+| 9. Identificação e Acesso aos Códigos-Fonte | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Mariana Ribeiro](https://github.com/marianagonzaga0)| A definir |
+| 10. Limitações e Considerações de Segurança | [Dylan Cavalcante](https://github.com/dylancavalcante) | [Samuel Felipe](https://github.com/TerminaKng05)| A definir |
+| 11. Histórico de Versão e Revisão Documental | [Samuel Felipe](https://github.com/TerminaKng05) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
 
 ---
 

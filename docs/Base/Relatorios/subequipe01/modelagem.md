@@ -11,16 +11,16 @@ A tabela a seguir detalha a divisão de responsabilidades, a revisão em pares (
 
 | Etapa / Tópico do Relatório | Autor(a) Principal | Revisor(a) em Par | Evidência / Commit |
 | :--- | :--- | :--- | :---: |
-| 1. Introdução | A definir | A definir | A definir |
-| 2. Objetivos (geral e específicos) | A definir | A definir | A definir |
-| 3. Visão Geral dos Padrões | A definir | A definir | A definir |
-| 4. Metodologia | A definir | A definir | A definir |
-| 5. Modelagem UML: Factory Method e descrição do modelo | A definir | A definir | A definir |
-| 6. Modelagem UML: Singleton e descrição do modelo | A definir | A definir | A definir |
-| 7. Integração entre os Modelos | A definir | A definir | A definir |
-| 8. Conclusão | A definir | A definir | A definir |
-| Referências bibliográficas | A definir | A definir | A definir |
-| Histórico de versão e revisão documental | A definir | A definir | A definir |
+| 1. Introdução | [Samuel Felipe](https://github.com/TerminaKng05) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 2. Objetivos (geral e específicos) | [Samuel Felipe](https://github.com/TerminaKng05) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 3. Visão Geral dos Padrões | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Samuel Felipe](https://github.com/TerminaKng05)| A definir |
+| 4. Metodologia | [Samuel Felipe](https://github.com/TerminaKng05) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 5. Modelagem UML: Factory Method e descrição do modelo | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Mariana Ribeiro](https://github.com/marianagonzaga0)| A definir |
+| 6. Modelagem UML: Singleton e descrição do modelo | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 7. Integração entre os Modelos | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 8. Conclusão | [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| Referências bibliográficas | [Mariana Ribeiro](https://github.com/marianagonzaga0) |[Samuel Felipe](https://github.com/TerminaKng05)| A definir |
+| Histórico de versão e revisão documental | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
 
 ## 1. Introdução
 

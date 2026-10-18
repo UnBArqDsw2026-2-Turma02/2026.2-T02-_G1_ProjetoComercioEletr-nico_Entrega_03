@@ -12,15 +12,15 @@ A tabela a seguir detalha a divisão de responsabilidades, o fluxo de co-criaç�
 
 | Etapa / Tópico do Relatório | Autor(a) Principal | Revisor(a) em Par | Evidência / Commit |
 | :--- | :--- | :--- | :---: |
-| 1. Introdução | A definir | A definir | A definir |
-| 2. Objetivos (geral e específicos) | A definir | A definir | A definir |
-| 3. Identificação dos Padrões GoF | A definir | A definir | A definir |
-| 4. Padrão Factory Method: problema, solução, validação e segurança | A definir | A definir | A definir |
-| 5. Padrão Singleton: problema, solução, validação e segurança | A definir | A definir | A definir |
-| 6. Comparação e Integração entre os Padrões | A definir | A definir | A definir |
-| 7. Limitações e *Trade-offs* | A definir | A definir | A definir |
-| 8. Considerações Finais | A definir | A definir | A definir |
-| Referências bibliográficas | A definir | A definir | A definir |
+| 1. Introdução | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 2. Objetivos (geral e específicos) | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 3. Identificação dos Padrões GoF | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Dylan Cavalcante](https://github.com/dylancavalcante)  | A definir |
+| 4. Padrão Factory Method: problema, solução, validação e segurança | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 5. Padrão Singleton: problema, solução, validação e segurança | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 6. Comparação e Integração entre os Padrões | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0)| [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| 7. Limitações e *Trade-offs* | [Mariana Ribeiro](https://github.com/marianagonzaga0) | [Samuel Felipe](https://github.com/TerminaKng05) | A definir |
+| 8. Considerações Finais | [Samuel Felipe](https://github.com/TerminaKng05) | [Dylan Cavalcante](https://github.com/dylancavalcante), [Samuel Felipe](https://github.com/TerminaKng05), [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
+| Referências bibliográficas | [Samuel Felipe](https://github.com/TerminaKng05) | [Mariana Ribeiro](https://github.com/marianagonzaga0) | A definir |
 
 ---
 
