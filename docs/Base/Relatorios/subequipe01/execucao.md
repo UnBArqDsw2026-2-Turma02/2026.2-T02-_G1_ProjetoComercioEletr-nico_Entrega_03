@@ -178,7 +178,7 @@ Após executar os comandos no computador da equipe, acrescentar capturas reais d
 
 <img src="../../../assets/images/execucao_dylan.gif" alt="Demonstração da execução do projeto por Dylan" width="960">
 
-[Baixar ou abrir o GIF](../../../assets/images/execucao_dylan.gif)
+![Baixar ou abrir o GIF](../../../assets/images/execucao_dylan.gif)
 
 
 
