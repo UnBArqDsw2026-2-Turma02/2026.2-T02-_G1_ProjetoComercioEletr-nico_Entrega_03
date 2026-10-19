@@ -1,9 +1,11 @@
 package subequipe03.ecommerce;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Pedido {
+public class Pedido implements PedidoObservavel {
     private int idPedido;
     private Date dataPedido;
     private BigDecimal valorTotal;
@@ -15,6 +17,8 @@ public class Pedido {
     private FormaPagamento formaPagamento;
 
     private EstadoPedido estado;
+
+    private final List<PedidoObserver> observadores = new ArrayList<>();
 
     public Pedido(int idPedido, Cliente cliente, Carrinho carrinho, Frete frete) {
         this.idPedido = idPedido;
@@ -65,7 +69,36 @@ public class Pedido {
     }
 
     public void mudarEstado(EstadoPedido novoEstado) {
+        String estadoAnterior = this.estado.getNome();
         this.estado = novoEstado;
+        notificarObservadores(estadoAnterior);
+    }
+
+    @Override
+    public void adicionarObservador(PedidoObserver observador) {
+        if (observador == null) {
+            throw new IllegalArgumentException("Observador não pode ser nulo.");
+        }
+        if (!observadores.contains(observador)) {
+            observadores.add(observador);
+        }
+    }
+
+    @Override
+    public void removerObservador(PedidoObserver observador) {
+        observadores.remove(observador);
+    }
+
+    @Override
+    public void notificarObservadores(String estadoAnterior) {
+        for (PedidoObserver observador : new ArrayList<>(observadores)) {
+            try {
+                observador.atualizar(this, estadoAnterior);
+            } catch (RuntimeException e) {
+                System.out.println("   [Aviso] " + observador.getClass().getSimpleName()
+                        + " falhou: " + e.getMessage());
+            }
+        }
     }
 
     public int getIdPedido() { return idPedido; }

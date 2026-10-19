@@ -37,6 +37,14 @@ public class Produto {
         estoqueProduto -= quantidade;
     }
  
+    /** Devolução ao estoque (ex.: cancelamento de um pedido já pago). */
+    public void reporEstoque(int quantidade) {
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException("Quantidade deve ser maior que zero.");
+        }
+        estoqueProduto += quantidade;
+    }
+
     public int getIdProduto() { return idProduto; }
     public String getNomeProduto() { return nomeProduto; }
     public void setNomeProduto(String nomeProduto) { this.nomeProduto = nomeProduto; }
