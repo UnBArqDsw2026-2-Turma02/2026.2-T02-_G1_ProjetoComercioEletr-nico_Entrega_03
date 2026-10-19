@@ -16,7 +16,7 @@
         - [Modelagem](/Base/Relatorios/subequipe01/modelagem.md)
         - [Implementação](/Base/Relatorios/subequipe01/implementacao.md)
         - [Execução](/Base/Relatorios/subequipe01/execucao.md)
-        - [IA Generativa e Lições Aprendidas](/Base/Relatorios/subequipe01/ia_generativa.md)
+        - [IA Generativa e Lições Aprendidas](/Base/Relatorios/1.1.3.subequipe-03/iaEquipe03.md)
         - [Gestão e Participações](/Base/Relatorios/subequipe01/gestao.md)
 
       - **Sub-Equipe 02**
