@@ -16,7 +16,7 @@ Cada integrante deve registrar ou validar sua própria reflexão, relacionando o
 
 | Nome do membro | Lições aprendidas | Uso da IA generativa — senso crítico e validação |
 | :--- | :--- | :--- |
-| **Diassis Bezerra Nascimento** | A preencher pelo integrante, considerando sua atuação na justificativa, modelagem, implementação e execução inicial do Adapter. | A preencher pelo integrante, descrevendo as sugestões utilizadas, os ajustes realizados e os critérios de validação. |
+| **Diassis Bezerra Nascimento** | Aprendi que aplicar um padrão GoF exige definir com precisão o problema, justificar a escolha e manter coerência entre UML, código e testes. No caso do Adapter, foi especialmente importante distinguir o catálogo externo simulado de uma característica comprovada do sistema estudado. A revisão da conversão de preços e dos resultados da execução reforçou que uma implementação funcional também precisa ter premissas e limites explícitos. | Usei IA generativa como apoio à análise, à modelagem, à geração inicial do código Java e à documentação, em um fluxo semelhante ao de projetos que incorporam essas ferramentas ao desenvolvimento. O código foi gerado com apoio de IA, sob minha orientação e supervisão contínuas: examinei as propostas, confrontei-as com as entregas anteriores, corrigi inconsistências e conferi o comportamento por meio da execução e dos testes. Esse apoio permitiu concluir o trabalho em aproximadamente dois dias; sem ele, estimo que as mesmas atividades levariam vários dias. A experiência mostrou que a rapidez na produção do código não substitui a compreensão da solução, a validação dos resultados e a responsabilidade humana pelas decisões. |
 | **Nayra Silva Nery** | A preencher pela integrante, considerando as atividades e revisões efetivamente realizadas. | A preencher pela integrante, descrevendo seu uso de IA e a análise crítica das sugestões. |
 | **Uires Carlos de Oliveira** | Compreendi melhor os papéis Client, Target, Adapter e Adaptee e sua correspondência entre UML e código Java. Aprendi a compilar os arquivos, executar verificações e distinguir uma revisão por leitura de uma validação por execução. Também ampliei os testes em um arquivo complementar, preservando o teste original. | Utilizei o ChatGPT para apoiar a revisão da documentação e do código, analisar uma dependência UML, elaborar testes complementares e orientar a compilação e a execução no PowerShell. As sugestões foram comparadas com os arquivos apresentados e os testes foram executados no ambiente local. A alteração gráfica sugerida para o UML não foi incorporada; ficou documentada como proposta. |
 
@@ -93,7 +93,7 @@ A experiência registrada permitiu destacar os seguintes aprendizados:
 - **Rastreabilidade:** os registros devem identificar o que cada integrante elaborou, revisou ou executou.
 - **Uso crítico de IA:** sugestões precisam ser compreendidas e verificadas antes de serem incorporadas.
 
-As reflexões específicas de Diassis e Nayra serão complementadas pelos próprios integrantes no quadro individual.
+A reflexão específica de Nayra ainda deverá ser complementada pela própria integrante no quadro individual.
 
 ---
 
@@ -118,7 +118,7 @@ A responsabilidade pelas decisões e pela validação permanece com os integrant
 - Orientação dos comandos de compilação e execução.
 - Apoio à descrição dos resultados e à preparação da demonstração em vídeo.
 
-A documentação de Diassis também registra apoio de IA na elaboração de seus artefatos. O detalhamento da ferramenta, das solicitações e da validação deverá ser complementado pelo próprio integrante.
+**Ferramenta utilizada por Diassis:** Codex, da OpenAI. Ele utilizou o assistente para apoiar a formulação do problema, a revisão da justificativa, a modelagem UML, a geração inicial do código Java, a elaboração das verificações e a documentação. As propostas foram examinadas à luz das Entregas 01 e 02 e da correspondência entre problema, modelo, código e resultados executados. A incompatibilidade com o catálogo externo foi mantida explicitamente como hipótese acadêmica, sem atribuí-la à arquitetura real da loja estudada.
 
 O uso de IA por Nayra deverá ser descrito por ela, conforme as atividades efetivamente realizadas.
 
@@ -144,4 +144,6 @@ O uso de IA por Nayra deverá ser descrito por ela, conforme as atividades efeti
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | :---: | :---: | :--- | :--- | :--- |
-| 1.0 | 18/10/2026 | Adaptação da página para a Subequipe 02 e registro das experiências de Uires no uso de IA, na revisão dos artefatos e na elaboração e execução dos testes complementares, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Pendente. |
+| 1.0 | 18/10/2026 | Adaptação da página para a Subequipe 02 e registro das experiências de Uires no uso de IA, na revisão dos artefatos e na elaboração e execução dos testes complementares, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) |
+| 1.1 | 19/10/2026 | Registro da reflexão individual de Diassis sobre lições aprendidas, uso supervisionado de IA e validação da solução. Texto formalizado com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 19/10/2026 | Registro de Diassis como revisor da versão 1.0 e padronização de seu nome nos registros. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |

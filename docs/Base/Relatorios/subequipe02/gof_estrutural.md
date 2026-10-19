@@ -1,5 +1,14 @@
 # GoF Estrutural — Adapter
 
+## Divisão de Responsabilidades
+
+As contribuições autorais abaixo são identificadas por commits deste artefato. Os registros de revisão no histórico de versões não são tratados como autoria do texto.
+
+| Etapa / Tópico do Relatório | Autor(a) Principal | Evidência / Commit |
+| --- | --- | --- |
+| Proposta inicial do Adapter para a busca de produtos | [Uires Carlos de Oliveira](https://github.com/uires2023) | [0806017](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/0806017) |
+| Delimitação do problema, justificativa do padrão e rastreabilidade com as Entregas 01 e 02 | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [7f86916](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/7f86916), [1cf5043](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/1cf5043) |
+
 ## 1. Escopo e origem do problema
 
 A Subequipe 02 trabalha com o **Fluxo de Navegação B: Busca de Produtos, Carrinho e Compra** do projeto G1_ProjetoComercioEletronico. Na Entrega 01, a engenharia reversa descreveu a pesquisa, a visualização de produtos e a continuação da compra. Na Entrega 02, o diagrama de classes incluiu `Produto` com os atributos `id`, `nome` e `precoAtual`; o diagrama de componentes apresentou **Busca e Catálogo**; e o diagrama de sequência representou a consulta ao Catálogo durante a pesquisa. Esses artefatos fundamentam o domínio e o recorte de **busca de produtos** desta proposta.
@@ -38,7 +47,7 @@ A [implementação foi feita em Java](/Base/Relatorios/subequipe02/implementacao
 
 ## 4. Método de análise, justificativa e limites
 
-Para formular a proposta, foram retomados o processo de busca da Entrega 01 e os elementos `Produto`, **Busca e Catálogo** e Catálogo da Entrega 02. Em seguida, foi definida a hipótese de um contrato externo fixo e comparada a tradução dentro de `BuscaProdutos` com sua concentração em um adaptador. A decisão foi conferida com a finalidade do padrão descrita na literatura. A revisão pelos integrantes da subequipe e o registro das contribuições individuais ainda estão pendentes.
+Para formular a proposta, foram retomados o processo de busca da Entrega 01 e os elementos `Produto`, **Busca e Catálogo** e Catálogo da Entrega 02. Em seguida, foi definida a hipótese de um contrato externo fixo e comparada a tradução dentro de `BuscaProdutos` com sua concentração em um adaptador. A decisão foi conferida com a finalidade do padrão descrita na literatura. As contribuições autorais verificáveis estão registradas na tabela acima.
 
 O problema escolhido é a **incompatibilidade entre duas interfaces de catálogo**: nomes de operações diferentes e estruturas de dados diferentes. O Adapter mantém essa conversão em um único componente e permite que `BuscaProdutos` dependa do contrato `CatalogoProdutos`. Se o formato do fornecedor mudar, a busca poderá conservar seu contrato; o catálogo simulado e o adaptador poderão exigir ajustes. A solução também permite substituir o catálogo por outra implementação do mesmo contrato sem reescrever a busca.
 
@@ -70,14 +79,13 @@ O recorte desta demonstração termina na obtenção de resultados de busca. A v
 
 ## 7. Histórico de versões
 
-## 7. Histórico de versões
-
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
 | 1.0 | 14/10/2026 | [Proposta inicial do Adapter](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/0806017026430903b4f95213d20bd0c1eff8e1c6) para a busca de produtos. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Nayra Silva Nery](https://github.com/NayraNery127) |
-| 1.1 | 18/10/2026 | Revisão do problema e da justificativa do Adapter, com rastreabilidade às Entregas 01 e 02 e definição de Java para a implementação. Texto elaborado com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
-| 1.2 | 18/10/2026 | Revisão técnica das premissas, distinção entre interfaces, representação monetária e método de análise, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.4 | 18/10/2026 | Atualização da referência à explicação já publicada da modelagem. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
-| 1.6 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.1 | 18/10/2026 | Revisão do problema e da justificativa do Adapter, com rastreabilidade às Entregas 01 e 02 e definição de Java para a implementação. Texto elaborado com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.2 | 18/10/2026 | Revisão técnica das premissas, distinção entre interfaces, representação monetária e método de análise, com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.4 | 18/10/2026 | Atualização da referência à explicação já publicada da modelagem. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.6 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.7 | 19/10/2026 | Inclusão da divisão de responsabilidades e dos commits, padronização do nome de Diassis e correção do título duplicado do histórico. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
