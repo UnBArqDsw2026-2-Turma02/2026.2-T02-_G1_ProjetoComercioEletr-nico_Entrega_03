@@ -182,6 +182,7 @@ Essa abordagem permitiu aproveitar os benefícios da ferramenta sem dispensar a 
 
 | Versão | Data | Descrição | Autores | Revisor |
 |---|---|---|---|---|
-| 0.1 | 17/10/2026 | Criação e estruturação da página de IA Generativa & Lições Aprendidas. | [Dylan Cavalcante](https://github.com/dylancavalcante)  | Samuel Felipe |
-| 0.2 | 17/10/2026 | Adição de conteúdo sobre o uso de IA e as lições aprendidas. | Samuel Felipe |  |
+| 0.1 | 17/10/2026 | Criação e estruturação da página de IA Generativa & Lições Aprendidas. | [Dylan Cavalcante](https://github.com/dylancavalcante)  | [Samuel Felipe](https://github.com/TerminaKng05) |
+| 0.2 | 17/10/2026 | Adição de conteúdo sobre o uso de IA e as lições aprendidas. | [Samuel Felipe](https://github.com/TerminaKng05) |  |
 | 0.3 | 18/10/2026 | Adição de conteúdo sobre o uso de IA e as lições aprendidas. | [Dylan Cavalcante](https://github.com/dylancavalcante)  | — |
+| 0.4 | 18/10/2026 | Adição de conteúdo sobre o uso de IA e as lições aprendidas. | [Mariana Ribeiro](https://github.com/marianagonzaga0) | — |
