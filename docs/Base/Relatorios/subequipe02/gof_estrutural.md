@@ -70,12 +70,14 @@ O recorte desta demonstração termina na obtenção de resultados de busca. A v
 
 ## 7. Histórico de versões
 
+## 7. Histórico de versões
+
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 14/10/2026 | [Proposta inicial do Adapter](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/0806017026430903b4f95213d20bd0c1eff8e1c6) para a busca de produtos. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Não registrada. |
-| 1.1 | 18/10/2026 | Revisão do problema e da justificativa do Adapter, com rastreabilidade às Entregas 01 e 02 e definição de Java para a implementação. Texto elaborado com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.2 | 18/10/2026 | Revisão técnica das premissas, distinção entre interfaces, representação monetária e método de análise, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.4 | 18/10/2026 | Atualização da referência à explicação já publicada da modelagem. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.6 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.0 | 14/10/2026 | [Proposta inicial do Adapter](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/0806017026430903b4f95213d20bd0c1eff8e1c6) para a busca de produtos. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.1 | 18/10/2026 | Revisão do problema e da justificativa do Adapter, com rastreabilidade às Entregas 01 e 02 e definição de Java para a implementação. Texto elaborado com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.2 | 18/10/2026 | Revisão técnica das premissas, distinção entre interfaces, representação monetária e método de análise, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.3 | 18/10/2026 | Ligação com a página de Modelagem UML da etapa 02. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.4 | 18/10/2026 | Atualização da referência à explicação já publicada da modelagem. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.6 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
