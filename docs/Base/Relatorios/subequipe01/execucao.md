@@ -150,27 +150,40 @@ Após executar os comandos no computador da equipe, acrescentar capturas reais d
 
 ### 8.1. Demonstração do Singleton
 
-**Figura 1 — Execução de `singleton_sessao.py`.**
+**Execução de `singleton_sessao.py`.**
 
-[Inserir captura real do terminal.]
+![Execução dos testes do Singleton por Dylan Cavalcante](../../../assets/images/singleton.png)
 
-*Fonte: elaborada pela equipe, 2026.*
+*Figura — Execução no Windows, com PowerShell e Python 3.13.14 Fonte: captura de Dylan Portela Cavalcante, 18/10/2026.*
 
 ### 8.2. Demonstração do Factory Method
 
-**Figura 2 — Execução de `factory_method_autenticacao.py`.**
+**Execução de `factory_method_autenticacao.py`.**
 
-[Inserir captura real do terminal.]
 
-*Fonte: elaborada pela equipe, 2026.*
+![Execução dos testes do factory method parte 01 por Dylan Cavalcante](../../../assets/images/factory01.png)
+![Execução dos testes do factory method parte 02 por Dylan Cavalcante](../../../assets/images/factory02.png)
+
+*Figuras — Execução no Windows, com PowerShell e Python 3.13.14 Fonte: captura de Dylan Portela Cavalcante, 18/10/2026.*
 
 ### 8.3. Testes automatizados
 
-**Figura 3 — Resultado da execução de `python -m unittest -v test_gof.py`.**
+**Resultado da execução de `python -m unittest -v test_gof.py`.**
 
-[Inserir captura real do terminal com os testes e o resumo final.]
+![Execução dos testes por Dylan Cavalcante](../../../assets/images/pytest.png)
 
-*Fonte: elaborada pela equipe, 2026.*
+*Figuras — Execução no Windows, com PowerShell e Python 3.13.14 Fonte: captura de Dylan Portela Cavalcante, 18/10/2026.*
+
+### 8.4. Vídeo da execução
+
+<img
+  src="../../../assets/images/execucao_dylan.gif"
+  alt="Demonstração da execução do projeto por Dylan"
+  style="width: 100%; max-width: 960px; height: auto;"
+>
+
+[Baixar ou abrir o GIF](../../../assets/images/execucao_dylan.gif)
+
 
 ## 9. Conclusão
 
