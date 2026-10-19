@@ -58,6 +58,15 @@ A captura apresenta a execução do teste original e dos seis cenários compleme
 
 *Figura — Execução no Windows, com PowerShell e JDK 24.0.2. Fonte: captura de Uires Carlos de Oliveira, 18/10/2026.*
 
+### 3.2. Vídeo da execução
+
+<video controls preload="metadata" style="width: 100%; max-width: 960px;">
+  <source src="assets/images/execucao-adapter-uires.mp4" type="video/mp4">
+  Seu navegador não suporta a reprodução deste vídeo.
+</video>
+
+[Baixar ou abrir o vídeo](assets/images/execucao-adapter-uires.mp4)
+
 ## 4. Histórico de versões
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
