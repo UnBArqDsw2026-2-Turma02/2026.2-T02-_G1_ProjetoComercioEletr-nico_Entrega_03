@@ -49,6 +49,15 @@ Nenhum produto encontrado.
 
 A consulta `"Bola"` confirma a tradução de `BOLA-01 / Bola de futebol / 12990` para `Produto` com `precoAtual = 129.90`. O segundo item confirma que a quantidade e a ordem são preservadas. A consulta `"sem-correspondencia"` confirma o retorno de uma lista vazia. A classe `AdapterCheck` também confere esses valores programaticamente e verifica a busca com letras em caixas diferentes.
 
+
+### 3.1. Evidência da execução dos testes complementares
+
+A captura apresenta a execução do teste original e dos seis cenários complementares, concluídos com sucesso.
+
+![Execução dos testes do Adapter por Uires](../../../assets/images/execucao-adapter-uires.png)
+
+*Figura — Execução no Windows, com PowerShell e JDK 24.0.2. Fonte: captura de Uires Carlos de Oliveira, 18/10/2026.*
+
 ## 4. Histórico de versões
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
