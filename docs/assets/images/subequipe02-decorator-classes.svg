@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1510" height="900" viewBox="0 0 1510 900" role="img" aria-labelledby="title description">
+  <title id="title">Diagrama de classes UML do Decorator de disponibilidade da Subequipe 02</title>
+  <desc id="description">BuscaProdutos usa CatalogoProdutos. CatalogoAdapter e CatalogoDecorator realizam essa interface. CatalogoDecorator agrega um CatalogoProdutos. CatalogoComDisponibilidade especializa CatalogoDecorator e usa ConsultaEstoque, realizada por EstoqueSimulado.</desc>
+  <defs>
+    <marker id="open-arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 12 7 L 1 13" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="none"/>
+    </marker>
+    <marker id="realization" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 16 9 L 1 17 Z" fill="white" stroke="#334155" stroke-width="2" stroke-dasharray="none"/>
+    </marker>
+    <marker id="aggregation" markerWidth="24" markerHeight="14" refX="2" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 2 7 L 12 1 L 22 7 L 12 13 Z" fill="white" stroke="#334155" stroke-width="2" stroke-dasharray="none"/>
+    </marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #17212f; }
+      .title { font-size: 25px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #475569; }
+      .name { font-size: 19px; font-weight: 700; text-anchor: middle; }
+      .abstract { font-style: italic; }
+      .stereotype { font-size: 14px; font-style: italic; text-anchor: middle; fill: #475569; }
+      .member { font-size: 15px; }
+      .edge-label { font-size: 14px; fill: #334155; }
+      .note { font-size: 14px; fill: #334155; }
+      .box { stroke: #334155; stroke-width: 2; }
+      .divider { stroke: #64748b; stroke-width: 1.2; }
+      .edge { stroke: #334155; stroke-width: 2; fill: none; }
+      .dashed { stroke: #334155; stroke-width: 2; stroke-dasharray: 8 6; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1510" height="900" fill="white"/>
+  <text x="50" y="42" class="title">Decorator de disponibilidade — diagrama de classes</text>
+  <text x="50" y="68" class="subtitle">Acrescenta a regra de estoque ao catálogo já adaptado; estoque e catálogo externo são simulados.</text>
+
+  <!-- Client -->
+  <rect x="50" y="110" width="340" height="150" rx="3" fill="#eaf3ff" class="box"/>
+  <text x="220" y="136" class="stereotype">«Client»</text>
+  <text x="220" y="160" class="name">BuscaProdutos</text>
+  <line x1="50" y1="174" x2="390" y2="174" class="divider"/>
+  <text x="66" y="198" class="member">- catalogo: CatalogoProdutos</text>
+  <line x1="50" y1="210" x2="390" y2="210" class="divider"/>
+  <text x="66" y="238" class="member">+ pesquisar(termo: String): List&lt;Produto&gt;</text>
+
+  <!-- Component -->
+  <rect x="560" y="110" width="380" height="130" rx="3" fill="#ecfdf5" class="box"/>
+  <text x="750" y="136" class="stereotype">«Component» «interface»</text>
+  <text x="750" y="160" class="name">CatalogoProdutos</text>
+  <line x1="560" y1="174" x2="940" y2="174" class="divider"/>
+  <text x="576" y="202" class="member">+ buscarProdutos(termo: String):</text>
+  <text x="596" y="226" class="member">List&lt;Produto&gt;</text>
+
+  <!-- ConcreteComponent (Adapter) -->
+  <rect x="50" y="390" width="400" height="140" rx="3" fill="#fff7ed" class="box"/>
+  <text x="250" y="416" class="stereotype">«ConcreteComponent» (Adapter)</text>
+  <text x="250" y="440" class="name">CatalogoAdapter</text>
+  <line x1="50" y1="454" x2="450" y2="454" class="divider"/>
+  <text x="66" y="478" class="member">- catalogoExterno: CatalogoExternoSimulado</text>
+  <line x1="50" y1="490" x2="450" y2="490" class="divider"/>
+  <text x="66" y="516" class="member">+ buscarProdutos(termo: String): List&lt;Produto&gt;</text>
+
+  <!-- Decorator -->
+  <rect x="560" y="390" width="420" height="170" rx="3" fill="#f5f3ff" class="box"/>
+  <text x="770" y="416" class="stereotype">«Decorator» {abstract}</text>
+  <text x="770" y="440" class="name abstract">CatalogoDecorator</text>
+  <line x1="560" y1="454" x2="980" y2="454" class="divider"/>
+  <text x="576" y="478" class="member"># catalogo: CatalogoProdutos</text>
+  <line x1="560" y1="490" x2="980" y2="490" class="divider"/>
+  <text x="576" y="516" class="member"># CatalogoDecorator(catalogo: CatalogoProdutos)</text>
+  <text x="576" y="542" class="member">+ buscarProdutos(termo: String): List&lt;Produto&gt;</text>
+
+  <!-- ConcreteDecorator -->
+  <rect x="560" y="680" width="420" height="180" rx="3" fill="#f5f3ff" class="box"/>
+  <text x="770" y="706" class="stereotype">«ConcreteDecorator»</text>
+  <text x="770" y="730" class="name">CatalogoComDisponibilidade</text>
+  <line x1="560" y1="744" x2="980" y2="744" class="divider"/>
+  <text x="576" y="768" class="member">- estoque: ConsultaEstoque</text>
+  <line x1="560" y1="780" x2="980" y2="780" class="divider"/>
+  <text x="576" y="806" class="member">+ CatalogoComDisponibilidade(catalogo:</text>
+  <text x="596" y="826" class="member">CatalogoProdutos, estoque: ConsultaEstoque)</text>
+  <text x="576" y="850" class="member">+ buscarProdutos(termo: String): List&lt;Produto&gt;</text>
+
+  <!-- ConsultaEstoque -->
+  <rect x="1100" y="700" width="360" height="120" rx="3" fill="#ecfdf5" class="box"/>
+  <text x="1280" y="726" class="stereotype">«interface»</text>
+  <text x="1280" y="750" class="name">ConsultaEstoque</text>
+  <line x1="1100" y1="764" x2="1460" y2="764" class="divider"/>
+  <text x="1116" y="796" class="member">+ estaDisponivel(idProduto: String): boolean</text>
+
+  <!-- EstoqueSimulado -->
+  <rect x="1100" y="430" width="360" height="130" rx="3" fill="#fff7ed" class="box"/>
+  <text x="1280" y="456" class="stereotype">«simulação acadêmica»</text>
+  <text x="1280" y="480" class="name">EstoqueSimulado</text>
+  <line x1="1100" y1="494" x2="1460" y2="494" class="divider"/>
+  <text x="1116" y="518" class="member">- QUANTIDADES: Map&lt;String, Integer&gt;</text>
+  <line x1="1100" y1="528" x2="1460" y2="528" class="divider"/>
+  <text x="1116" y="550" class="member">+ estaDisponivel(idProduto: String): boolean</text>
+
+  <!-- Client -> Component -->
+  <path d="M 390 185 L 556 185" class="edge" marker-end="url(#open-arrow)"/>
+  <text x="404" y="176" class="edge-label">- catalogo</text>
+  <text x="530" y="205" class="edge-label">1</text>
+
+  <!-- Adapter realizes Component -->
+  <path d="M 250 390 L 250 320 L 640 320 L 640 244" class="dashed" marker-end="url(#realization)"/>
+
+  <!-- Decorator realizes Component -->
+  <path d="M 770 390 L 770 244" class="dashed" marker-end="url(#realization)"/>
+
+  <!-- Decorator aggregates Component -->
+  <path d="M 980 430 L 1050 430 L 1050 200 L 944 200" class="edge" marker-start="url(#aggregation)" marker-end="url(#open-arrow)"/>
+  <text x="1058" y="320" class="edge-label"># catalogo</text>
+  <text x="954" y="222" class="edge-label">1</text>
+
+  <!-- ConcreteDecorator extends Decorator -->
+  <path d="M 770 680 L 770 564" class="edge" marker-end="url(#realization)"/>
+
+  <!-- ConcreteDecorator -> ConsultaEstoque -->
+  <path d="M 980 760 L 1096 760" class="edge" marker-end="url(#open-arrow)"/>
+  <text x="992" y="750" class="edge-label">- estoque</text>
+  <text x="1076" y="780" class="edge-label">1</text>
+
+  <!-- EstoqueSimulado realizes ConsultaEstoque -->
+  <path d="M 1280 560 L 1280 696" class="dashed" marker-end="url(#realization)"/>
+
+  <!-- Note -->
+  <path d="M 50 640 L 420 640 L 440 660 L 440 790 L 50 790 Z" fill="#fefce8" stroke="#a16207" stroke-width="1.5"/>
+  <path d="M 420 640 L 420 660 L 440 660" fill="none" stroke="#a16207" stroke-width="1.5"/>
+  <text x="66" y="668" class="note">CatalogoAdapter é o mesmo Adapter</text>
+  <text x="66" y="690" class="note">do modelo anterior: envolve</text>
+  <text x="66" y="712" class="note">CatalogoExternoSimulado (omitido aqui).</text>
+  <text x="66" y="742" class="note">O Decorator envolve qualquer</text>
+  <text x="66" y="764" class="note">CatalogoProdutos, inclusive o Adapter.</text>
+</svg>

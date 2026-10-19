@@ -58,7 +58,7 @@ O problema escolhido é a **incompatibilidade entre duas interfaces de catálogo
 
 O padrão tem custo: acrescenta uma interface e uma classe, além de exigir manutenção quando o formato adaptado mudar. Para um único catálogo que já oferecesse exatamente o contrato esperado, essa estrutura não se justificaria. Neste exercício, a diferença de operações e dados foi criada deliberadamente para demonstrar o caso de uso do Adapter; ela deve continuar identificada como **simulação acadêmica**, não como achado de engenharia reversa.
 
-O recorte desta demonstração termina na obtenção de resultados de busca. A validação de estoque representada na sequência da Entrega 02, assim como carrinho, checkout, pagamento e integração com serviços reais, fica fora deste exemplo do Adapter. A [execução documentada](/Base/Relatorios/subequipe02/execucao.md) usa o mesmo cenário do problema, do modelo UML e do código Java.
+O recorte desta demonstração termina na obtenção de resultados de busca. A validação de estoque representada na sequência da Entrega 02 fica fora deste exemplo do Adapter e passou a ser tratada pelo [Decorator de disponibilidade](/Base/Relatorios/subequipe02/gof_decorator.md), que envolve o catálogo já adaptado. Carrinho, checkout, pagamento e integração com serviços reais continuam fora do exemplo. A [execução documentada](/Base/Relatorios/subequipe02/execucao.md) usa o mesmo cenário do problema, do modelo UML e do código Java.
 
 ## 5. Rastreabilidade com as entregas anteriores
 
@@ -89,3 +89,4 @@ O recorte desta demonstração termina na obtenção de resultados de busca. A v
 | 1.5 | 18/10/2026 | Atualização do texto e ligações com a implementação e a execução concluídas na etapa 03. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
 | 1.6 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
 | 1.7 | 19/10/2026 | Inclusão da divisão de responsabilidades e dos commits, padronização do nome de Diassis e correção do título duplicado do histórico. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.8 | 19/10/2026 | Atualização do recorte: a validação de estoque passa a ser tratada pelo Decorator de disponibilidade. | [Nayra Silva Nery](https://github.com/NayraNery127) | Pendente. |
