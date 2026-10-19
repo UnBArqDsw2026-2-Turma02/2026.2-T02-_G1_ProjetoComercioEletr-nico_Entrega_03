@@ -129,6 +129,17 @@ BOLA-01 | Bola de futebol | R$ 129,90
 
 A bola de basquete, sem estoque, deixa de aparecer apenas quando o catálogo está decorado.
 
+### Vídeo da execução
+
+O vídeo apresenta o problema, o modelo UML, o código do Decorator, a execução dos testes e a demonstração com e sem o Decorator.
+
+<video controls preload="metadata" style="width: 100%; max-width: 960px;">
+  <source src="assets/images/execucao-decorator-nayra.mp4" type="video/mp4">
+  Seu navegador não suporta a reprodução deste vídeo.
+</video>
+
+[Baixar ou abrir o vídeo](assets/images/execucao-decorator-nayra.mp4)
+
 ## 6. Testes
 
 `tests/subequipe02/DecoratorCheck.java` segue o estilo dos testes do Adapter (sem bibliotecas externas). Alguns cenários usam catálogos e estoques "falsos" escritos como lambdas, para testar o Decorator isolado do Adapter.
@@ -175,3 +186,4 @@ Limites: o estoque é simulado e consultado um produto por vez; carrinho, reserv
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
 | 1.0 | 19/10/2026 | Criação do Decorator de disponibilidade: problema, UML, código, testes e execução, com apoio de IA generativa. | [Nayra Silva Nery](https://github.com/NayraNery127) | Pendente. |
+| 1.1 | 19/10/2026 | Inclusão do vídeo da execução com explicação do Decorator. | [Nayra Silva Nery](https://github.com/NayraNery127) | Pendente. |
