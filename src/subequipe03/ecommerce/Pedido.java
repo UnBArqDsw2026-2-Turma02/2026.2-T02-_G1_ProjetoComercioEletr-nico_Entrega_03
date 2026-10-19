@@ -6,7 +6,6 @@ import java.util.Date;
 public class Pedido {
     private int idPedido;
     private Date dataPedido;
-    private String statusPedido;
     private BigDecimal valorTotal;
     private String status;
 
@@ -15,13 +14,15 @@ public class Pedido {
     private Frete frete;
     private FormaPagamento formaPagamento;
 
+    private EstadoPedido estado;
+
     public Pedido(int idPedido, Cliente cliente, Carrinho carrinho, Frete frete) {
         this.idPedido = idPedido;
         this.cliente = cliente;
         this.carrinho = carrinho;
         this.frete = frete;
         this.dataPedido = new Date();
-        this.statusPedido = "CRIADO";
+        this.estado = new EstadoCriado();
         this.status = "Ativo";
     }
 
@@ -39,26 +40,40 @@ public class Pedido {
         return this.valorTotal;
     }
 
-    public void finalizar() {
+    public boolean processarPagamento() {
         calcularTotal();
-        if (formaPagamento != null) {
-            boolean pago = formaPagamento.processarPagamento(this.valorTotal);
-            if (pago) {
-                this.statusPedido = "PAGO";
-                System.out.println("Pedido #" + idPedido + " finalizado com sucesso! Total: R$ " + this.valorTotal);
-            } else {
-                this.statusPedido = "FALHA_PAGAMENTO";
-                System.out.println("Falha ao processar o pagamento do pedido #" + idPedido);
-            }
-        } else {
+        if (formaPagamento == null) {
             throw new IllegalStateException("Nenhuma forma de pagamento definida para o pedido.");
         }
+        return formaPagamento.processarPagamento(this.valorTotal);
     }
 
-    // Getters
+    public void finalizar() {
+        estado.pagar(this);
+    }
+
+    public void enviar() {
+        estado.enviar(this);
+    }
+
+    public void entregar() {
+        estado.entregar(this);
+    }
+
+    public void cancelar() {
+        estado.cancelar(this);
+    }
+
+    public void mudarEstado(EstadoPedido novoEstado) {
+        this.estado = novoEstado;
+    }
+
     public int getIdPedido() { return idPedido; }
     public Date getDataPedido() { return dataPedido; }
-    public String getStatusPedido() { return statusPedido; }
+    public String getStatusPedido() { return estado.getNome(); }
     public BigDecimal getValorTotal() { return valorTotal; }
     public BigDecimal getValorFrete() { return frete.getValorFrete(); }
+    public Cliente getCliente() { return cliente; }
+    public Carrinho getCarrinho() { return carrinho; }
+    public FormaPagamento getFormaPagamento() { return formaPagamento; }
 }
