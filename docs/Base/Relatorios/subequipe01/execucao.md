@@ -176,8 +176,6 @@ Após executar os comandos no computador da equipe, acrescentar capturas reais d
 
 ### 8.4. Vídeo da execução
 
-<img src="../../../assets/images/execucao_dylan.gif" alt="Demonstração da execução do projeto por Dylan" width="960">
-
 ![Baixar ou abrir o GIF](../../../assets/images/execucao_dylan.gif)
 
 
