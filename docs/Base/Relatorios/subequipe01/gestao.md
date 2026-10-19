@@ -26,10 +26,9 @@ Tabela com as ferramentas e as funções:
 | **Draw.io** | Elaboração de diagramas |
 
 ## 4. Histórico de Reuniões
-
 | Data | Pauta / Objetivo | Participantes | Ata / Registro | Gravação em Vídeo |
-| :---: | :--- | :--- | :---: | :---: |
-| 16/10/2026 | Alinhamento sobre a entrega e divisões de tarefas | Samuel Felipe, Dylan Cavalcante e Mariana Ribeiro |  |  |
+|:---:|:---|:---|:---:|:---:|
+| 16/10/2026 | Alinhamento sobre a entrega e divisão de tarefas | Samuel Felipe, Dylan Cavalcante e Mariana Ribeiro | [Visualizar ata](./Base/Relatorios/subequipe01/atasubgrupo01.md) | [Assistir à gravação](https://unbbr-my.sharepoint.com/:v:/g/personal/231026984_aluno_unb_br/IQC4_F4ODvbmR619fgCvIoxwAfgOyuHHrSN0LAAht7MyxJw?e=R7Ka7f) |
 
 ## 5. Divisão de Papéis e Contribuição
 
@@ -49,8 +48,10 @@ Tabela com as ferramentas e as funções:
 ### Mapeamento dos Integrantes
 
 ---
-> **Histórico de Versões**
-> | Versão | Data | Descrição | Autores | Revisores |
-> | :----: | :--: | :-------: | :-----: | :-------: |
-> | 0.1 | 18/10/2026 | Criação e estruturação da página | [Samuel Felipe](https://github.com/TerminaKng05) |  |
-> | 0.2 | 18/10/2026 | Adição sobre introdução, ferramentas, histórico de reunião e divisão de papéis e contribuição | [Samuel Felipe](https://github.com/TerminaKng05) |  |
+
+**Histórico de Versões**
+
+| Versão | Data | Descrição | Autores | Revisores |
+|:---:|:---:|---|:---:|:---:|
+| 0.1 | 18/10/2026 | Criação e estruturação da página | [Samuel Felipe](https://github.com/TerminaKng05) | — |
+| 0.2 | 18/10/2026 | Adição sobre introdução, ferramentas, histórico de reunião e divisão de papéis e contribuições | [Samuel Felipe](https://github.com/TerminaKng05) | — |
