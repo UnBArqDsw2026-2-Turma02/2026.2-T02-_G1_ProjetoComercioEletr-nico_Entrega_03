@@ -1,5 +1,16 @@
 # Execução e Verificação — Adapter de Catálogo
 
+## Divisão de Responsabilidades
+
+As linhas identificam a autoria das instruções, dos testes complementares e das evidências de execução conforme os commits vinculados.
+
+| Etapa / Tópico do Relatório | Autor(a) Principal | Evidência / Commit |
+| --- | --- | --- |
+| Instruções iniciais, teste do Adapter e resultados observados | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [ffd8d2c](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/ffd8d2c), [6001b89](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/6001b89) |
+| Seis cenários de teste complementares | [Uires Carlos de Oliveira](https://github.com/uires2023) | [fdda97f](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/fdda97f) |
+| Captura da execução dos testes | [Uires Carlos de Oliveira](https://github.com/uires2023) | [d25aff2](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/d25aff2) |
+| Gravação e inclusão do vídeo da execução | [Uires Carlos de Oliveira](https://github.com/uires2023) | [73e6b8d](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/73e6b8d) |
+
 ## 1. Pré-requisitos
 
 - JDK 17 ou superior instalado, com `javac` e `java` no `PATH`.
@@ -71,7 +82,8 @@ A captura apresenta a execução do teste original e dos seis cenários compleme
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.1 | 18/10/2026 | Revisão dos comandos de reprodução para interromper a sequência em caso de erro. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.2 | 18/10/2026 | Atualização da página para manter apenas os comandos e resultados verificáveis. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.0 | 18/10/2026 | Instruções de compilação, cenários e saída observada da implementação Java, com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.1 | 18/10/2026 | Revisão dos comandos de reprodução para interromper a sequência em caso de erro. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.2 | 18/10/2026 | Atualização da página para manter apenas os comandos e resultados verificáveis. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
 | 1.3 | 18/10/2026 | Inclusão e execução de seis novos cenários em AdapterCheckComplementar.java, com apoio de IA generativa, preservando o teste original e registrando os resultados na documentação, cosnta no GITHUB. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.4 | 19/10/2026 | Inclusão da divisão de responsabilidades e dos commits de testes e execução, com padronização do nome de Diassis. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |

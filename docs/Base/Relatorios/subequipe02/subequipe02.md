@@ -86,15 +86,18 @@ A matriz apresenta a participação prevista para esta entrega. Os três integra
 
 ### 6.2. Registro das contribuições realizadas
 
-O quadro abaixo registra somente contribuições identificáveis no histórico desta branch. Os commits de Diassis foram feitos com apoio de IA, sob sua condução; a revisão pelos demais integrantes ainda não foi registrada. Os commits de Diassis listados abaixo continuam locais e seus hashes poderão receber links do GitHub após a publicação da branch.
+O quadro abaixo registra contribuições identificáveis em commits publicados. Os commits de Diassis foram feitos com apoio de IA, sob sua condução, e integrados à `main` pelo [PR #30](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/pull/30). As revisões declaradas nos históricos de versões são distintas da autoria dos artefatos.
 
 | Etapa / Artefato | Contribuição realizada | Autor(a) | Revisor(a) | Evidência |
 | --- | --- | --- | --- | --- |
-| Apresentação inicial | Criou a página de visão geral da Subequipe 02. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Não registrado. | Commit `f2bf25f`. |
+| Apresentação inicial | Criou a página de visão geral da Subequipe 02. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Commit `f2bf25f`. |
 | Proposta inicial do GoF | Registrou a primeira proposta do Adapter para a busca. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Não registrado. | Commit `0806017`. |
-| Etapa 01 — problema e escolha | Fundamentou o cenário, a escolha do Adapter e revisou as premissas com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. | Commits `7f86916` e `1cf5043`. |
-| Etapa 02 — modelagem | Elaborou e revisou o UML do Adapter, incluindo rastreabilidade com a proposta, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. | Commits `042f7c9` e `d571794`. |
-| Etapa 03 — implementação e execução | Implementou o exemplo Java, documentou a execução e revisou as evidências com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. | Commits `ffd8d2c` e `6001b89`. |
+| Etapa 01 — problema e escolha | Fundamentou o cenário, a escolha do Adapter e revisou as premissas com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. | Commits `7f86916` e `1cf5043`. |
+| Etapa 02 — modelagem | Elaborou e revisou o UML do Adapter, incluindo rastreabilidade com a proposta, com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. | Commits `042f7c9` e `d571794`. |
+| Etapa 03 — implementação e execução | Implementou o exemplo Java, documentou a execução e revisou as evidências com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. | Commits `ffd8d2c` e `6001b89`. |
+| Complementos de UML e implementação | Registrou a análise da dependência UML e a revisão por leitura do código. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Sem evidência independente vinculada. | Commits [1cad755](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/1cad755) e [04bd55e](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/04bd55e). |
+| Testes e evidências de execução | Acrescentou seis cenários de teste, uma captura e um vídeo da execução. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Sem evidência independente vinculada. | Commits [fdda97f](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/fdda97f), [d25aff2](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/d25aff2) e [73e6b8d](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/73e6b8d). |
+| IA generativa e lições aprendidas | Registrou seu ponto de vista individual e a análise crítica da IA. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Commit [b38ff00](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/b38ff00). |
 
 A participação de Nayra nas atividades desta entrega ainda precisa ser registrada com a respectiva evidência. A participação conjunta planejada não substitui o registro individual do que cada integrante elaborou ou revisou.
 
@@ -110,7 +113,8 @@ O [quadro detalhado de gestão e contribuições](/Base/Relatorios/subequipe02/g
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 15/10/2026 | Elaboração da versão inicial da página de Visão Geral e Gestão da Subequipe 02 para a Entrega 03, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Revisão pendente. |
-| 1.1 | 18/10/2026 | Registro das contribuições verificáveis, dos commits locais e das revisões pendentes. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.2 | 18/10/2026 | Correção do link para o quadro detalhado de gestão na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
-| 1.3 | 18/10/2026 | Atualização da descrição da página de execução. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.0 | 15/10/2026 | Elaboração da versão inicial da página de Visão Geral e Gestão da Subequipe 02 para a Entrega 03, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) |
+| 1.1 | 18/10/2026 | Registro das contribuições verificáveis, dos commits locais e das revisões pendentes. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 18/10/2026 | Correção do link para o quadro detalhado de gestão na prévia do GitHub Pages. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.3 | 18/10/2026 | Atualização da descrição da página de execução. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.4 | 19/10/2026 | Registro de Diassis como revisor da versão 1.0, atualização do quadro de contribuições e padronização de seu nome. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |

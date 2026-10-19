@@ -1,10 +1,20 @@
 # Implementação Java — Adapter de Catálogo
 
+## Divisão de Responsabilidades
+
+As linhas identificam a autoria do código e da explicação deste artefato conforme os commits vinculados.
+
+| Etapa / Tópico do Relatório | Autor(a) Principal | Evidência / Commit |
+| --- | --- | --- |
+| Implementação Java do Adapter e documentação da correspondência com o UML | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [ffd8d2c](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/ffd8d2c) |
+| Revisão da explicação dos participantes e da reprodução do exemplo | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [6001b89](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/6001b89) |
+| Registro da revisão por leitura do código e dos testes | [Uires Carlos de Oliveira](https://github.com/uires2023) | [04bd55e](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/04bd55e) |
+
 ## 1. Código e organização
 
 A implementação do [modelo UML](/Base/Relatorios/subequipe02/modelagem.md) está em `src/subequipe02`, no pacote Java `subequipe02`. Ela usa somente a biblioteca padrão do Java 17 ou superior. O catálogo é **simulado** e contém dados fictícios; não consulta a loja estudada nem qualquer serviço externo.
 
-[Código da Subequipe 02 na branch de trabalho](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/tree/subequipe02/src/subequipe02) — o link passará a mostrar estes arquivos quando os commits locais forem publicados no fluxo de pull request da subequipe. Até lá, os arquivos estão disponíveis no checkout local.
+[Código da Subequipe 02 publicado na `main`](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/tree/main/src/subequipe02).
 
 | Papel no padrão | Arquivo | O que faz |
 | --- | --- | --- |
@@ -91,13 +101,14 @@ Os construtores e métodos de acesso de `Produto` e `ItemExterno` foram omitidos
 
 `tests/subequipe02/AdapterCheck.java` exercita o fluxo completo `BuscaProdutos → CatalogoProdutos → CatalogoAdapter → CatalogoExternoSimulado`, conferindo os campos convertidos, os valores monetários, a ordem dos resultados, a busca sem correspondência e a busca sem diferenciar maiúsculas e minúsculas. As [instruções e a saída observada](/Base/Relatorios/subequipe02/execucao.md) estão na página de execução.
 
-Esta implementação não inclui estoque, carrinho, checkout, APIs externas ou uma interface gráfica. A revisão do código pelos demais integrantes e o registro de suas contribuições individuais permanecem pendentes.
+Esta implementação não inclui estoque, carrinho, checkout, APIs externas ou uma interface gráfica. As contribuições autorais verificáveis estão registradas na tabela acima; os registros de revisão permanecem identificados no histórico de versões.
 
 ## 5. Histórico de versões
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | --- | --- | --- | --- | --- |
-| 1.0 | 18/10/2026 | Implementação Java do Adapter e documentação da correspondência entre modelo e código, com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.1 | 18/10/2026 | Revisão dos trechos de código dos quatro participantes do padrão e da ligação entre eles. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
-| 1.2 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.0 | 18/10/2026 | Implementação Java do Adapter e documentação da correspondência entre modelo e código, com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.1 | 18/10/2026 | Revisão dos trechos de código dos quatro participantes do padrão e da ligação entre eles. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
+| 1.2 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
 | 1.3 | 18/10/2026 | Registro da revisão por leitura do código e dos testes, com apoio de IA generativa e comparação com a modelagem UML. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Nayra Silva Nery](https://github.com/NayraNery127) |
+| 1.4 | 19/10/2026 | Inclusão da divisão de responsabilidades e dos commits, atualização do link para o código publicado e padronização do nome de Diassis. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |

@@ -144,5 +144,6 @@ O uso de IA por Nayra deverá ser descrito por ela, conforme as atividades efeti
 
 | Versão | Data | Descrição | Autor(a) | Revisor(a) |
 | :---: | :---: | :--- | :--- | :--- |
-| 1.0 | 18/10/2026 | Adaptação da página para a Subequipe 02 e registro das experiências de Uires no uso de IA, na revisão dos artefatos e na elaboração e execução dos testes complementares, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | Pendente. |
-| 1.1 | 19/10/2026 | Registro da reflexão individual de Diassis sobre lições aprendidas, uso supervisionado de IA e validação da solução. Texto formalizado com apoio de IA. | [Diassis Bezerra Nascimento (@Diaxiz)](https://github.com/Diaxiz) | Pendente. |
+| 1.0 | 18/10/2026 | Adaptação da página para a Subequipe 02 e registro das experiências de Uires no uso de IA, na revisão dos artefatos e na elaboração e execução dos testes complementares, com apoio de IA generativa. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) |
+| 1.1 | 19/10/2026 | Registro da reflexão individual de Diassis sobre lições aprendidas, uso supervisionado de IA e validação da solução. Texto formalizado com apoio de IA. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.2 | 19/10/2026 | Registro de Diassis como revisor da versão 1.0 e padronização de seu nome nos registros. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
