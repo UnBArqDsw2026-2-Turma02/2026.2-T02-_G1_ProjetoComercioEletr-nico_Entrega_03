@@ -17,13 +17,12 @@ Este quadro registra contribuições associadas a commits da branch `subequipe02
 | Testes complementares | Acrescentou seis cenários de verificação do Adapter. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [fdda97f](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/fdda97f) | Sem evidência independente vinculada. |
 | Evidências da execução | Adicionou a captura e o vídeo da execução dos testes. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [d25aff2](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/d25aff2), [73e6b8d](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/73e6b8d) | Sem evidência independente vinculada. |
 | IA generativa e lições aprendidas | Registrou sua reflexão individual e a análise crítica do uso de IA. | [Uires Carlos de Oliveira](https://github.com/uires2023) | [b38ff00](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/b38ff00) | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) |
+| Segundo GoF estrutural | [Decorator de disponibilidade](/Base/Relatorios/subequipe02/gof_decorator.md): justificativa, UML, código Java, testes, execução e documentação, com apoio de IA generativa. | [Nayra Silva Nery](https://github.com/NayraNery127) | [87da114](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/87da114), [b6b984f](https://github.com/UnBArqDsw2026-2-Turma02/2026.2-T02-_G1_ProjetoComercioEletr-nico_Entrega_03/commit/b6b984f) | Pendente. |
 
 ## 3. Próximos registros da equipe
 
 - Vincular evidências próprias às revisões que constam apenas dos históricos de versões.
-- Acrescentar contribuições próprias de Nayra quando houver artefato ou evidência verificável.
 - Registrar somente reuniões realizadas, com participantes e ata ou outra evidência disponível.
-- Completar o ponto de vista individual de Nayra sobre lições aprendidas e uso crítico de IA na [página dedicada](/Base/Relatorios/subequipe02/ia_generativa.md).
 
 ## 4. Histórico de versões
 
@@ -33,3 +32,4 @@ Este quadro registra contribuições associadas a commits da branch `subequipe02
 | 1.1 | 18/10/2026 | Correção dos links internos para navegação na prévia do GitHub Pages. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Nayra Silva Nery](https://github.com/NayraNery127) |
 | 1.2 | 18/10/2026 | Atualização do registro de contribuições da etapa 03. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | [Uires Carlos de Oliveira](https://github.com/uires2023) |
 | 1.3 | 19/10/2026 | Atualização do status dos commits, inclusão das contribuições posteriores de Uires e padronização do nome de Diassis. | [Diassis Bezerra Nascimento](https://github.com/Diaxiz) | Pendente. |
+| 1.4 | 19/10/2026 | Inclusão da contribuição de Nayra (Decorator de disponibilidade). | [Nayra Silva Nery](https://github.com/NayraNery127) | Pendente. |
