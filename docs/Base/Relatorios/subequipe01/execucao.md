@@ -176,15 +176,10 @@ Após executar os comandos no computador da equipe, acrescentar capturas reais d
 
 ### 8.4. Vídeo da execução
 
-```html
-<img
-  src="assets/images/execucao_dylan.gif"
-  alt="Demonstração da execução do projeto por Dylan"
-  style="width: 100%; max-width: 960px; height: auto;"
->
+<img src="../../../assets/images/execucao_dylan.gif" alt="Demonstração da execução do projeto por Dylan" width="960">
 
-[Baixar ou abrir o GIF](assets/images/execucao_dylan.gif)
-```
+[Baixar ou abrir o GIF](../../../assets/images/execucao_dylan.gif)
+
 
 
 ## 9. Conclusão
