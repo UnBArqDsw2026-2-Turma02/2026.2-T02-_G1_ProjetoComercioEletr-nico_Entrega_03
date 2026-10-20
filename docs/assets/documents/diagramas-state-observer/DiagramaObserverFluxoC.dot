@@ -1,0 +1,23 @@
+digraph G {
+  graph [fontname="DejaVu Sans", pad=0.3, nodesep=0.5, ranksep=0.8, bgcolor="white"];
+  node  [shape=plain, fontname="DejaVu Sans"];
+  edge  [fontname="DejaVu Sans", fontsize=10];
+  rankdir=BT;
+  Observavel [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#DCE9F8" ALIGN="CENTER" CELLPADDING="6"><FONT POINT-SIZE="10">«interface»</FONT><BR/><I>PedidoObservavel</I></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ adicionarObservador(o: PedidoObserver): void<BR ALIGN="LEFT"/>+ removerObservador(o: PedidoObserver): void<BR ALIGN="LEFT"/>+ notificarObservadores(estadoAnterior: String): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Pedido [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#E3F1DF" ALIGN="CENTER" CELLPADDING="6"><B>Pedido</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">- observadores: List&lt;PedidoObserver&gt;<BR ALIGN="LEFT"/></FONT></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ mudarEstado(novoEstado: EstadoPedido): void<BR ALIGN="LEFT"/>+ getStatusPedido(): String<BR ALIGN="LEFT"/>+ getCliente(): Cliente<BR ALIGN="LEFT"/>+ getCarrinho(): Carrinho<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Observer [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#DCE9F8" ALIGN="CENTER" CELLPADDING="6"><FONT POINT-SIZE="10">«interface»</FONT><BR/><I>PedidoObserver</I></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ atualizar(pedido: Pedido, estadoAnterior: String): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Notif [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>NotificacaoClienteObserver</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ atualizar(pedido, estadoAnterior): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Estoque [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstoqueObserver</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ atualizar(pedido, estadoAnterior): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Hist [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>HistoricoPedidoObserver</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">- registros: List&lt;String&gt;<BR ALIGN="LEFT"/></FONT></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ atualizar(pedido, estadoAnterior): void<BR ALIGN="LEFT"/>+ imprimirHistorico(): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Cliente [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#F1F1F1" ALIGN="CENTER" CELLPADDING="6"><B>Cliente</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR></TABLE>>];
+  Produto [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#F1F1F1" ALIGN="CENTER" CELLPADDING="6"><B>Produto</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ baixarEstoque(quantidade: int): void<BR ALIGN="LEFT"/>+ reporEstoque(quantidade: int): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  {rank=same; Pedido; Observer;}
+  {rank=same; Notif; Estoque; Hist;}
+  Pedido -> Observavel [arrowhead=empty, style=dashed];
+  Pedido -> Observer [arrowtail=odiamond, arrowhead=vee, dir=both, taillabel="1", headlabel="0..*", label="  observadores  ", labeldistance=2.2];
+  Notif -> Observer [arrowhead=empty, style=dashed];
+  Estoque -> Observer [arrowhead=empty, style=dashed];
+  Hist -> Observer [arrowhead=empty, style=dashed];
+  Notif -> Cliente [arrowhead=vee, style=dashed, label="  e-mail  "];
+  Estoque -> Produto [arrowhead=vee, style=dashed, label="  baixa / devolve  "];
+}

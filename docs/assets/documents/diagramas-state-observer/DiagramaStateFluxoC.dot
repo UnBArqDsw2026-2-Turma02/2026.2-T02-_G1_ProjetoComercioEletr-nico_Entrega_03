@@ -1,0 +1,23 @@
+digraph G {
+  graph [fontname="DejaVu Sans", pad=0.3, nodesep=0.5, ranksep=0.8, bgcolor="white"];
+  node  [shape=plain, fontname="DejaVu Sans"];
+  edge  [fontname="DejaVu Sans", fontsize=10];
+  rankdir=BT;
+  Pedido [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#E3F1DF" ALIGN="CENTER" CELLPADDING="6"><B>Pedido</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">- idPedido: int<BR ALIGN="LEFT"/>- dataPedido: Date<BR ALIGN="LEFT"/>- valorTotal: BigDecimal<BR ALIGN="LEFT"/>- estado: EstadoPedido<BR ALIGN="LEFT"/></FONT></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ finalizar(): void<BR ALIGN="LEFT"/>+ enviar(): void<BR ALIGN="LEFT"/>+ entregar(): void<BR ALIGN="LEFT"/>+ cancelar(): void<BR ALIGN="LEFT"/>+ mudarEstado(novoEstado: EstadoPedido): void<BR ALIGN="LEFT"/>+ processarPagamento(): boolean<BR ALIGN="LEFT"/>+ getStatusPedido(): String<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  EstadoPedido [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#DCE9F8" ALIGN="CENTER" CELLPADDING="6"><FONT POINT-SIZE="10">«interface»</FONT><BR/><I>EstadoPedido</I></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ getNome(): String<BR ALIGN="LEFT"/>+ pagar(pedido: Pedido): void<BR ALIGN="LEFT"/>+ enviar(pedido: Pedido): void<BR ALIGN="LEFT"/>+ entregar(pedido: Pedido): void<BR ALIGN="LEFT"/>+ cancelar(pedido: Pedido): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Criado [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstadoCriado</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ pagar(pedido): void<BR ALIGN="LEFT"/>+ cancelar(pedido): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Falha [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstadoFalhaPagamento</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ pagar(pedido): void<BR ALIGN="LEFT"/>+ cancelar(pedido): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Pago [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstadoPago</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ enviar(pedido): void<BR ALIGN="LEFT"/>+ cancelar(pedido): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Enviado [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstadoEnviado</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="5"><FONT POINT-SIZE="10">+ entregar(pedido): void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+  Entregue [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstadoEntregue</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR></TABLE>>];
+  Cancelado [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" BGCOLOR="white"><TR><TD BGCOLOR="#FFF4D6" ALIGN="CENTER" CELLPADDING="6"><B>EstadoCancelado</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="2"> </TD></TR></TABLE>>];
+  {rank=same; Pedido; EstadoPedido;}
+  Pedido -> EstadoPedido [arrowhead=vee, taillabel="1", headlabel="1", label="  estado atual  ", labeldistance=2.2, labelangle=-20];
+  Criado -> EstadoPedido [arrowhead=empty, style=dashed];
+  Falha -> EstadoPedido [arrowhead=empty, style=dashed];
+  Pago -> EstadoPedido [arrowhead=empty, style=dashed];
+  Enviado -> EstadoPedido [arrowhead=empty, style=dashed];
+  Entregue -> EstadoPedido [arrowhead=empty, style=dashed];
+  Cancelado -> EstadoPedido [arrowhead=empty, style=dashed];
+  Criado -> Pedido [arrowhead=vee, style=dashed, label="  mudarEstado()  ", constraint=false];
+}

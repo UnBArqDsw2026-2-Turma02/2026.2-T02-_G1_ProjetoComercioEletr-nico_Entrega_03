@@ -135,6 +135,7 @@ Com o objetivo de alcançar alta coesão e baixo acoplamento — permitindo que 
 | **v0.1** | 12/10/2026 | Modelagem inicial com aplicação do Padrão GoF *Strategy* |
 | **v1.0** | 14/10/2026 | Altera o modelo inicial usando o Modelo 1. Confeccionado por Letícia, revisado e aprovado por Rafaela |
 
+
 > **Nota de Versionamento:** O diagrama completo e interativo pode ser acessado online [aqui](https://drive.google.com/file/d/1PAof5HkGvJISSdFrAPxbfek8Zh8LF6Cr/view?usp=sharing).
 </details>
 
