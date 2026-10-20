@@ -1,7 +1,15 @@
 package subequipe03.ecommerce;
 
+/**
+ * Padrão State (GoF comportamental) - interface "State".
+ *
+ * Declara as operações do ciclo de vida de um Pedido. Cada estado concreto
+ * sobrescreve apenas as operações que são válidas para ele; as demais caem na
+ * implementação padrão, que rejeita a transição.
+ */
 public interface EstadoPedido {
 
+    /** Nome do estado, usado para exibição e para os observadores. */
     String getNome();
 
     default void pagar(Pedido pedido) {

@@ -1,5 +1,9 @@
 package subequipe03.ecommerce;
 
+/**
+ * O pagamento foi recusado. O cliente pode tentar pagar de novo (inclusive
+ * trocando a forma de pagamento, que é a estratégia do pedido) ou cancelar.
+ */
 public class EstadoFalhaPagamento implements EstadoPedido {
 
     @Override

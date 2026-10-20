@@ -33,6 +33,7 @@
         - [Apresentação da Equipe](/Base/Relatorios/1.1.3.subequipe-03/1.1.3.SubEquipe_03.md)
         - [Modelagem ](/Base/Relatorios/1.1.3.subequipe-03/padroesprojetoEquipe03.md)
         - [Implementação](/Base/Relatorios/1.1.3.subequipe-03/implementacaoEquipe03.md)
+        - [State e Observer](/Base/Relatorios/1.1.3.subequipe-03/stateObserverEquipe03.md)
         - [IA Generativa e Lições Aprendidas](/Base/Relatorios/1.1.3.subequipe-03/iaEquipe03.md)
         - [Gestão e Participações](/Base/Relatorios/1.1.3.subequipe-03/gestaoEquipe03.md)
-  
+        - [State e Observer](/Base/Relatorios/1.1.3.subequipe-03/stateObserverEquipe03.md)

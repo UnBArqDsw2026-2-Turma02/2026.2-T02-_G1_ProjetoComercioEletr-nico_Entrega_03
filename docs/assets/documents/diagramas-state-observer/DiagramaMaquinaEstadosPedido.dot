@@ -1,0 +1,20 @@
+digraph G {
+  graph [fontname="DejaVu Sans", pad=0.3, nodesep=0.7, ranksep=1.0, rankdir=LR, bgcolor="white"];
+  node  [shape=box, style="rounded,filled", fillcolor="#FFF4D6", fontname="DejaVu Sans", fontsize=12, margin="0.25,0.15"];
+  edge  [fontname="DejaVu Sans", fontsize=10];
+  ini [shape=circle, label="", width=0.2, style=filled, fillcolor=black];
+  fim [shape=doublecircle, label="", width=0.2, style=filled, fillcolor=black];
+  CRIADO; PAGO [fillcolor="#E3F1DF"]; FALHA [label="FALHA_PAGAMENTO", fillcolor="#F8DCDC"];
+  ENVIADO [fillcolor="#DCE9F8"]; ENTREGUE [fillcolor="#E3F1DF"]; CANCELADO [fillcolor="#F1F1F1"];
+  ini -> CRIADO;
+  CRIADO -> PAGO [label="finalizar()\n[pagamento aprovado]"];
+  CRIADO -> FALHA [label="finalizar()\n[pagamento recusado]"];
+  FALHA -> PAGO [label="finalizar()\n[aprovado]"];
+  FALHA -> FALHA [label="finalizar()\n[recusado]"];
+  PAGO -> ENVIADO [label="enviar()"];
+  ENVIADO -> ENTREGUE [label="entregar()"];
+  CRIADO -> CANCELADO [label="cancelar()"];
+  FALHA -> CANCELADO [label="cancelar()"];
+  PAGO -> CANCELADO [label="cancelar()"];
+  ENTREGUE -> fim; CANCELADO -> fim;
+}

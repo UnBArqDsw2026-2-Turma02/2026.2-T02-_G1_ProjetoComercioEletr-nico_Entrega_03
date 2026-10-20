@@ -1,5 +1,9 @@
 package subequipe03.ecommerce;
 
+/**
+ * Observador responsável pelo estoque: dá baixa quando o pedido é pago e
+ * devolve os itens se um pedido já pago for cancelado.
+ */
 public class EstoqueObserver implements PedidoObserver {
 
     @Override

@@ -1,5 +1,9 @@
 package subequipe03.ecommerce;
 
+/**
+ * Observador que avisa o cliente a cada mudança relevante do pedido.
+ * O envio é simulado com uma linha no terminal (sem e-mail real).
+ */
 public class NotificacaoClienteObserver implements PedidoObserver {
 
     @Override

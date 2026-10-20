@@ -1,5 +1,9 @@
 package subequipe03.ecommerce;
 
+/**
+ * Pagamento confirmado. O pedido pode ser enviado ou cancelado (com estorno
+ * e devolução ao estoque).
+ */
 public class EstadoPago implements EstadoPedido {
 
     @Override

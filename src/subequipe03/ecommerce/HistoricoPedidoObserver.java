@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Observador de auditoria: guarda cada transição de estado com data e hora,
+ * formando o histórico do pedido.
+ */
 public class HistoricoPedidoObserver implements PedidoObserver {
 
     private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("HH:mm:ss");

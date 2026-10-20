@@ -1,5 +1,9 @@
 package subequipe03.ecommerce;
 
+/**
+ * Estado inicial do pedido: criado, ainda sem pagamento confirmado.
+ * Pode ser pago (com sucesso ou não) ou cancelado.
+ */
 public class EstadoCriado implements EstadoPedido {
 
     @Override

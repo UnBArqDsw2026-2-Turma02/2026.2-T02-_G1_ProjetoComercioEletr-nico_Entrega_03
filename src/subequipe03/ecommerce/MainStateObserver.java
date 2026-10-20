@@ -3,6 +3,14 @@ package subequipe03.ecommerce;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Demonstração dos padrões State e Observer sobre o Pedido do Fluxo C.
+ * Roteiro fixo (sem digitação), pensado para a gravação do vídeo.
+ *
+ * Compilar e executar a partir da raiz do repositório:
+ *   javac -d out src/subequipe03/ecommerce/*.java
+ *   java -cp out subequipe03.ecommerce.MainStateObserver
+ */
 public class MainStateObserver {
 
     public static void main(String[] args) {
@@ -13,6 +21,9 @@ public class MainStateObserver {
         cenario5RemoverObservador();
     }
 
+    // ---------------------------------------------------------------
+    // Cenário 1: caminho feliz CRIADO -> PAGO -> ENVIADO -> ENTREGUE
+    // ---------------------------------------------------------------
     private static void cenario1FluxoCompleto() {
         titulo("CENÁRIO 1 - Fluxo completo (CRIADO > PAGO > ENVIADO > ENTREGUE)");
 
@@ -37,6 +48,9 @@ public class MainStateObserver {
         historico.imprimirHistorico();
     }
 
+    // ---------------------------------------------------------------
+    // Cenário 2: pagamento recusado, troca da estratégia e nova tentativa
+    // ---------------------------------------------------------------
     private static void cenario2FalhaEPagamentoNovamente() {
         titulo("CENÁRIO 2 - Pagamento recusado e nova tentativa (State + Strategy)");
 
@@ -45,6 +59,7 @@ public class MainStateObserver {
         pedido.adicionarObservador(new NotificacaoClienteObserver());
         pedido.adicionarObservador(new EstoqueObserver());
 
+        // Estratégia que sempre recusa (simula cartão negado)
         FormaPagamento cartaoRecusado = valor -> {
             System.out.println("Cartão recusado pela operadora (simulação) - valor R$ " + valor);
             return false;
@@ -61,6 +76,9 @@ public class MainStateObserver {
         System.out.println("Estado: " + pedido.getStatusPedido());
     }
 
+    // ---------------------------------------------------------------
+    // Cenário 3: o State impede transições que não fazem sentido
+    // ---------------------------------------------------------------
     private static void cenario3TransicoesInvalidas() {
         titulo("CENÁRIO 3 - Transições inválidas são bloqueadas pelo State");
 
@@ -85,6 +103,9 @@ public class MainStateObserver {
         System.out.println("\nEstado final: " + pedido.getStatusPedido());
     }
 
+    // ---------------------------------------------------------------
+    // Cenário 4: cancelamento após o pagamento devolve o estoque
+    // ---------------------------------------------------------------
     private static void cenario4CancelamentoAposPagamento() {
         titulo("CENÁRIO 4 - Cancelamento após pagamento (Observer devolve o estoque)");
 
@@ -102,6 +123,9 @@ public class MainStateObserver {
         System.out.println("\nEstoque depois: " + mouse.getEstoqueProduto() + " | Estado: " + pedido.getStatusPedido());
     }
 
+    // ---------------------------------------------------------------
+    // Cenário 5: observadores podem ser removidos em tempo de execução
+    // ---------------------------------------------------------------
     private static void cenario5RemoverObservador() {
         titulo("CENÁRIO 5 - Remover um observador em tempo de execução");
 
@@ -123,6 +147,10 @@ public class MainStateObserver {
         pedido.enviar();
         historico.imprimirHistorico();
     }
+
+    // ---------------------------------------------------------------
+    // Apoio
+    // ---------------------------------------------------------------
 
     private static Pedido novoPedido(int id, Produto produto, int quantidade) {
         Cliente cliente = new Cliente(1, "Camile Barbosa", "camile@exemplo.com", "61999990000");

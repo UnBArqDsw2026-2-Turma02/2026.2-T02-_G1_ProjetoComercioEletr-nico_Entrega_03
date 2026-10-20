@@ -36,7 +36,7 @@ public class Produto {
         }
         estoqueProduto -= quantidade;
     }
- 
+
     /** Devolução ao estoque (ex.: cancelamento de um pedido já pago). */
     public void reporEstoque(int quantidade) {
         if (quantidade <= 0) {
